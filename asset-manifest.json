@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/online-store-app/static/css/main.2788af4a.css",
+    "main.js": "/online-store-app/static/js/main.3e48b7eb.js",
+    "static/css/753.e6243abb.chunk.css": "/online-store-app/static/css/753.e6243abb.chunk.css",
+    "static/js/753.2a5e38ff.chunk.js": "/online-store-app/static/js/753.2a5e38ff.chunk.js",
+    "static/css/443.7ef09022.chunk.css": "/online-store-app/static/css/443.7ef09022.chunk.css",
+    "static/js/443.ce612ca5.chunk.js": "/online-store-app/static/js/443.ce612ca5.chunk.js",
+    "static/css/204.0743efe3.chunk.css": "/online-store-app/static/css/204.0743efe3.chunk.css",
+    "static/js/204.710cd363.chunk.js": "/online-store-app/static/js/204.710cd363.chunk.js",
+    "static/js/787.28cb0dcd.chunk.js": "/online-store-app/static/js/787.28cb0dcd.chunk.js",
+    "static/media/front_pic.jpg": "/online-store-app/static/media/front_pic.e9c8fd68f63715a2276b.jpg",
+    "static/media/PermanentMarker-Regular.ttf": "/online-store-app/static/media/PermanentMarker-Regular.109a10dca0508e41aa12.ttf",
+    "static/media/BebasNeue-Regular.ttf": "/online-store-app/static/media/BebasNeue-Regular.12e3683f9192436a7be8.ttf",
+    "static/media/Righteous-Regular.ttf": "/online-store-app/static/media/Righteous-Regular.fd0110471f2228c1808a.ttf",
+    "index.html": "/online-store-app/index.html",
+    "main.2788af4a.css.map": "/online-store-app/static/css/main.2788af4a.css.map",
+    "main.3e48b7eb.js.map": "/online-store-app/static/js/main.3e48b7eb.js.map",
+    "753.e6243abb.chunk.css.map": "/online-store-app/static/css/753.e6243abb.chunk.css.map",
+    "753.2a5e38ff.chunk.js.map": "/online-store-app/static/js/753.2a5e38ff.chunk.js.map",
+    "443.7ef09022.chunk.css.map": "/online-store-app/static/css/443.7ef09022.chunk.css.map",
+    "443.ce612ca5.chunk.js.map": "/online-store-app/static/js/443.ce612ca5.chunk.js.map",
+    "204.0743efe3.chunk.css.map": "/online-store-app/static/css/204.0743efe3.chunk.css.map",
+    "204.710cd363.chunk.js.map": "/online-store-app/static/js/204.710cd363.chunk.js.map",
+    "787.28cb0dcd.chunk.js.map": "/online-store-app/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2788af4a.css",
+    "static/js/main.3e48b7eb.js"
+  ]
+}

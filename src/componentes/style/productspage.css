@@ -1,0 +1,35 @@
+.divPpag{
+    display: flex;
+    width: 80vw;
+    column-gap: 10%;
+}
+.org_elem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.org_prod{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 50px;
+    width: 100%;
+}
+.org_pag{
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+    column-gap: 15px;
+}
+
+@media (max-width:850px){
+    .divPpag{
+        flex-direction: column;
+    }
+    .org_prod{
+        grid-template-columns: auto auto;
+    }
+    .org_pag{
+        grid-template-columns: auto auto auto auto auto;
+    }
+}

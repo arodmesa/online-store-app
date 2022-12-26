@@ -1,0 +1,17 @@
+.pag{
+    color: white;
+    width: 35px;
+    height: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    row-gap: 5px;
+    border-style: dashed;
+    border-color: white;
+}
+.pag:hover{
+    cursor: pointer;
+}

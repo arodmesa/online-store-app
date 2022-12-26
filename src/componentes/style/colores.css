@@ -1,0 +1,70 @@
+.colores{
+    height: 25px;
+    width: 25px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+.colores:hover{
+    cursor: pointer;
+}
+.grayscale{
+    filter: grayscale(60%);
+    background-color: red;
+    color: white;
+}
+.transparent{
+    filter: opacity(20%);
+    background-color: rgb(158, 95, 95);
+    font-weight: bolder;
+}
+.red{
+    background-color: red;
+}
+.orange{
+    background-color: orange;
+}
+.yellow{
+    background-color: yellow;
+}
+.green{
+    background-color: green;
+    color: white;
+}
+.turquoise{
+    background-color: turquoise;
+}
+.blue{
+    background-color: blue;
+    color: white;
+}
+.lilac{
+    background-color: violet;
+    color: white;
+}
+.pink{
+    background-color: pink;
+}
+.white{
+    width: 22px;
+    height: 22px;
+    background-color: white;
+    border-style:solid;
+    border-width: 2px;
+    border-color: #bbb;
+}
+.gray{
+    background-color: gray;
+    color: white;
+}
+.black{
+    background-color: black;
+    color: white;
+}
+.brown{
+    background-color: brown;
+    color: white;
+}

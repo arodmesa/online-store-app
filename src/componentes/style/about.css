@@ -1,0 +1,19 @@
+.about_div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 20px;
+    margin-bottom: 30vh;
+    text-align: justify;
+}
+@media (max-width:1000px) and (min-width:500px){
+    .p_about{
+        font-size: medium;
+    }
+}
+@media (max-width:500px){
+    .p_about{
+        font-size: small;
+    }
+}

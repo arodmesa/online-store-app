@@ -1,0 +1,55 @@
+@font-face {
+    font-family: 'Right';
+    src: url('./Righteous-Regular.ttf');
+}
+.div_card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:flex-start;
+    width: 20vw;
+    height: auto;
+    background: rgb(65,62,106);
+    background: linear-gradient(45deg, rgba(65,62,106,1) 7%, rgba(0,212,255,1) 91%, rgba(1,153,194,1) 100%);
+    border-radius: 15px;
+    color: black;
+    font-weight: bolder;
+    padding-bottom: 18px;
+}
+.org_card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 90px; 
+    border-radius: 20px;
+    margin-top: 15%;
+}
+.org_text_card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15%;
+}
+.img_card{
+    width: 70px;
+    height: 70px;    
+}
+.h3_card{
+    font-family: 'Right', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:  calc(0.7em + 0.5vw);
+}
+.p_card{
+    text-align: center;
+    margin-left: 7px;
+    margin-right: 7px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size:  calc(0.6em + 0.5vw);
+}
+
+@media (max-width:850px){
+    .div_card{
+        width: 28vw;
+    }
+}

@@ -1,0 +1,33 @@
+.org_imgCart, .h4_dinero{
+    font-size: calc(0.65em + 0.5vw);
+    font-weight: bolder;
+}
+.cant{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.fa-trash-o{
+    font-size: larger;
+    font-weight: bolder;
+}
+.fa-trash-o:hover{
+    cursor: pointer;
+    color: red;
+    font-size: x-large;
+}
+.img_cart{
+    border-radius: 15px;
+    min-width: 10vw;
+}
+
+@media (max-width:850px){
+    .cant{
+        margin-left: 5px;
+        margin-right: 5px;
+    }    
+}
+@media (max-width:400px){
+    .img_cart{
+        max-width: 22vw;
+    }
+}

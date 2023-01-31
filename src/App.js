@@ -1,4 +1,5 @@
 import './App.css';
+import { categories, colors } from './constants';
 import {Routes, Route, useNavigate} from 'react-router-dom';
 import { useState, useEffect, lazy, Suspense} from 'react';
 import { CircularProgressbar } from 'react-circular-progressbar';
@@ -14,11 +15,6 @@ import Error from './componentes/Error';
 const LazyHome= lazy(()=>import ('./componentes/Home'));
 const LazyAbout= lazy(()=>import ('./componentes/About'));
 const LazyCart= lazy(()=>import ('./componentes/Cart'));
-//const lazyNavBar= lazy(()=>import ('./componentes/NavBar'));
-//const lazyProduct= lazy(()=>import ('./componentes/Product'));
-//const lazyElementoCarrito= lazy(()=>import ('./componentes/ElementoCarrito'));
-//const lazyPageNotFound= lazy(()=>import ('./componentes/PageNotFound'));
-//const LazyProductsPage= lazy(()=>import ('./componentes/ProductsPage'));
 
 function App() {
   const [categorias_activas, SetCategoriaActiva]= useState((new Array(1).fill(true)).concat(new Array(20).fill(0)));
@@ -48,30 +44,29 @@ function App() {
   const [detalleProducto, SetDetalleProducto]= useState({});
   const fetchURL='https://pixabay.com/api/?key=26156012-7935c4847898e39ba3f45df31';
   const navigate=useNavigate(); 
+  
   ///// FUNCIONES ////
-  function cambiarActivo(tipo, index, pag){
-    const categorias=['all', 'backgrounds', 'fashion', 'nature', 'science', 'education', 'feelings', 'health', 'people', 'religion', 'places', 'animals', 'industry', 'computer', 'food', 'sports', 'transportation', 'travel', 'buildings', 'business', 'music'];
-    const colores=["all", "grayscale", "transparent", "red", "orange", "yellow", "green", "turquoise", "blue", "lilac", "pink", "white", "gray", "black", "brown" ];
+  function cambiarActivo(tipo, index, pag){    
     // el tipo es color u otro
-    if (tipo==='color' && color_actual!==colores[index]){
+    if (tipo==='color' && color_actual!==colors[index]){
       resetLoaded();
       SetColorActivo(()=>{
         let temp= new Array(14).fill(false);
         temp[index]=true;
         return temp.slice();
       })
-      SetColorUrl(`&colors=${colores[index]}`);
-      SetColorActual(colores[index]);
+      SetColorUrl(`&colors=${colors[index]}`);
+      SetColorActual(colors[index]);
     }
-    else if (tipo!=='color' && categoria_actual!==categorias[index]) {
+    else if (tipo!=='color' && categoria_actual!==categories[index]) {
       resetLoaded();
       SetCategoriaActiva(()=>{
         let temp= new Array(21).fill(false);
         temp[index]=true;
         return temp.slice();
       })
-      SetCatUrl(`&category=${categorias[index]}`);
-      SetCategoriaActual(categorias[index]);
+      SetCatUrl(`&category=${categories[index]}`);
+      SetCategoriaActual(categories[index]);
     }
     if (pag!=='1'){
       navigate('products/pageNum/1');
@@ -117,7 +112,6 @@ function App() {
       resetLoaded(); 
       SetPagActual(1);
     }    
-    //SetProductosPagActual([]);
   }  
   function getData(page){
     try{
@@ -283,7 +277,6 @@ function App() {
   },[cantElementosCart])
  
   ///////////////////
-  //<Route index element={<ProductsPage updatePage={updatePage} getData={getData} pagActual={pagActual} cantPag={cantPag} cantProdEncontrados={cantResultados} text_input={text_input} handleSearchInput={handleSearchInput} handleSearchClk={handleSearchClk} datos_productos={productosPagActual} cambiarActivo={cambiarActivo} checked_cat={categorias_activas} checked_color={colores_activos} resetFilters={resetFilters} handlePagClick={handlePagClick} />}></Route>
   return (
     <div className="App">
       <NavBar resetFilters={resetFilters} componentesCarrito={componentesCarrito}/>

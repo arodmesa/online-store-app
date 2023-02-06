@@ -18,7 +18,7 @@
     column-gap: 10%;
     height: 75vh;
     width: 100vw;
-    background-image: url('../../../public/front_pic.jpg');
+    background-image: url('../../public/front_pic.jpg');
     background-position: center;
     background-size: cover;
     color: white;

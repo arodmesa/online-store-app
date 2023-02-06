@@ -7,10 +7,8 @@ const activeCategorySlice = createSlice({
     },
     reducers: {
         changeActiveCategory(state, action){
-            const categoryName = action.payload
-            if (state.category !== categoryName){
-                state.category = categoryName;
-            }            
+            const categoryName = action.payload;
+            state.category = categoryName;          
         }
     }
 })

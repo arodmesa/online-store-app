@@ -1,4 +1,4 @@
-import './style/card.css';
+import './Card.css';
 function Card({icono_card, titulo_card, texto_card}){
     return(
         <div className="div_card">

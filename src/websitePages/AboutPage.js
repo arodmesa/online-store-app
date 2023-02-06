@@ -1,6 +1,6 @@
-import './style/about.css';
-import './style/home.css';
-function About(){
+import './AboutPage.css';
+import './HomePage.css';
+function AboutPage(){
     return(
         <div className="about_div">
             <h1 className="h1_title">Our story</h1>
@@ -13,4 +13,4 @@ function About(){
         </div>
     );
 }
-export default About;
+export default AboutPage;

@@ -7,10 +7,8 @@ const activeColorSlice = createSlice({
     },
     reducers: {
         changeActiveColor(state, action){
-            const colorName = action.payload
-            if (state.color !== colorName){
-                state.color = colorName;
-            }            
+            const newColorName = action.payload;
+            state.color = newColorName;           
         }
     }
 })

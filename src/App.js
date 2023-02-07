@@ -15,9 +15,7 @@ const LazyHome= lazy(()=>import ('./websitePages/HomePage'));
 const LazyAbout= lazy(()=>import ('./websitePages/AboutPage'));
 const LazyCart= lazy(()=>import ('./websitePages/CartPage'));
 
-// Arreglar el componente Error para q tenga una foto offline
-// CHEQUEAR COMENTARIOS EN portraitsInTheCartSlice
-// CHEQUEAR COMENTARIOS EN el archivo cartFunctionalities
+// Arreglar el componente Error para q tenga una foto offline 
 // CHEQUEAR COMENTARIOS EN HomePage
 // corregir q cuando no encuentre coincidencias redirija a una pagina q diga no portraits finded
 

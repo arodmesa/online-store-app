@@ -16,7 +16,6 @@ const LazyAbout= lazy(()=>import ('./websitePages/AboutPage'));
 const LazyCart= lazy(()=>import ('./websitePages/CartPage'));
 
 // Arreglar el componente Error para q tenga una foto offline
-// CHEQUEAR COMENTARIOS EN el ARCHIVO commonFunctions para agregar otras funcionalidades
 // CHEQUEAR COMENTARIOS EN portraitsInTheCartSlice
 // CHEQUEAR COMENTARIOS EN el archivo cartFunctionalities
 // CHEQUEAR COMENTARIOS EN HomePage

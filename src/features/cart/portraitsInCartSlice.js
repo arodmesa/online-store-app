@@ -2,6 +2,7 @@ import store from "../../app/store";
 import { createSlice } from "@reduxjs/toolkit";
 import { incrementAmountOfUniquePortraitsInCart, decrementAmountOfUniquePortraitsInCart, resetAmountOfUniquePortraitsInCart } from "./amountOfUniquePortraitsInCartSlice";
 import { calculateTotalPriceOfPurchase } from "./totalPriceOfPurchaseSlice";
+import { displayNotification } from "../notificationBar/notificationFunctionalities";
 
 function dispatchCalculateTotalPrice (){
     const cartContent = store.getState().portraitsInCartReducer.portraitsInCart;
@@ -23,10 +24,6 @@ const portraitsInCartSlice = createSlice({
                     subtotal: portraitDetails.webformatHeight*defaultAmountOfPortraitsToAddCart
                 }
             };
-            ///////////////////////////////////////
-            alert('Product added to the cart!!');
-            // Use a Notification BAR
-            ///////////////////////////////////////
             if (portraitID in state.portraitsInCart){
                 state.portraitsInCart[portraitID].amount += mainPortraitDetails[portraitID].amount; 
             }else{
@@ -36,7 +33,7 @@ const portraitsInCartSlice = createSlice({
                 }       
                 setTimeout(()=>store.dispatch(incrementAmountOfUniquePortraitsInCart()), 0);         
             }
-            setTimeout(dispatchCalculateTotalPrice, 0)
+            setTimeout(()=>{dispatchCalculateTotalPrice();displayNotification('Portrait added to the cart', 2000)}, 0);
         },
         removePortraitFromCart(state, action){
             const portraitID = action.payload;

@@ -7,6 +7,7 @@ import { useSelector} from 'react-redux';
 import { sendSubscriptionEmail, enableSubscribeButton } from '../features/emailSubscription/emailFuntionalities';
 import { cardsData, frontPagePortraitsIDs } from '../constants';
 import getPortraitData from '../features/portraitDetails/getPortraitData';
+import { displayNotification } from '../features/notificationBar/notificationFunctionalities';
 
 function HomePage(){
     const navigate= useNavigate();
@@ -19,10 +20,7 @@ function HomePage(){
             const arrayOfComponents = [];
             for await (let portraitData of arrayOfFetch){
                 if (portraitData.customError){
-                    ///////////////////////
-                    // DISPLAY NOTIFICATION
-                    console.log('ERROR');
-                    ///////////////////////
+                    displayNotification("Some error has occurred, check your internet connection or try again later...", 2000);
                 }else{
                     arrayOfComponents.push(
                         <Portrait key={portraitData.id} imgClassName={'imagen_portada'} 

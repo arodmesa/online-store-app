@@ -9,6 +9,7 @@ import PageNotFound from './websitePages/PageNotFound';
 import PortraitsPage from './websitePages/PortraitsPage';
 import PortraitDetailsPage from './websitePages/PortraitDetailsPage';
 import ErrorPage from './websitePages/ErrorPage';
+import NotificationBar from './features/notificationBar/NotificationBar';
 import { useSelector } from 'react-redux';
 const LazyHome= lazy(()=>import ('./websitePages/HomePage'));
 const LazyAbout= lazy(()=>import ('./websitePages/AboutPage'));
@@ -26,6 +27,7 @@ function App() {
   
   return (
     <div className="App">
+      <NotificationBar />
       <NavBar />
       <Routes>
         <Route path='/' element={

@@ -5,9 +5,8 @@ const notificationTextSlice = createSlice({
     initialState: {notificationText: ''},
     reducers: {
         changeNotificationText(state, action){
-            const {newNotificationText, notificationDisplayTime} = action.payload;
+            const newNotificationText = action.payload;
             state.notificationText = newNotificationText;
-            setTimeout(()=>state.notificationText = '', notificationDisplayTime);
         }
     }
 })

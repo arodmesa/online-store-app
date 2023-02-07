@@ -12,6 +12,7 @@ import { changeCurrentPageNumber } from "./features/paging/currentPageNumberSlic
 import { changeAmountOfResultsPages } from "./features/paging/amountOfResultsPagesSlice";
 import { changePortraitsData } from "./features/portraits/portraitsDataSlice";
 import { changeAmountOfPortraitsFinded } from "./features/portraits/amountOfPortraitsFindedSlice";
+import { displayNotification } from "./features/notificationBar/notificationFunctionalities";
 import fetchData from "./features/urlFetch/fetchData";
 import { apiURL } from "./constants";
 
@@ -65,12 +66,14 @@ async function getData(navigate, pageNumber){
     store.dispatch(changeCurrentPageNumber(pageNumber));
     const obtainedResponse = await fetchData(apiURL + searchTextURL + categoryURL + colorURL + pageURL);
     if (obtainedResponse.customError){
-      //////////////////////////////////////
-      // DISPLAY NOTIFICATION //
-      /////////////////////////////////////
-      navigate('/error'); //// Mejor una notificacion quizas
+      navigate('/error');
     }else if(obtainedResponse.totalHits===0){
-      navigate('PageNotFound');
+      displayNotification('No portraits finded, check your filters and try again...', 2000);
+      store.dispatch(changeAmountOfResultsPages(1));
+      store.dispatch(changePortraitsData([]));
+      store.dispatch(changeAmountOfPortraitsFinded(0));
+      store.dispatch(changeAreAllPortraitsLoaded(true));
+      navigate(`/products/pageNum/${pageNumber}`);
     }else{
       store.dispatch(changeAmountOfResultsPages(Math.ceil(obtainedResponse.totalHits/20)));
       store.dispatch(changePortraitsData(obtainedResponse.hits));
@@ -78,9 +81,7 @@ async function getData(navigate, pageNumber){
       navigate(`/products/pageNum/${pageNumber}`);
     }
   }catch{
-    //////////////////////////////////////
-      // DISPLAY NOTIFICATION //
-    /////////////////////////////////////
+    displayNotification('Some error has occurred...', 2000);
   }
       
 }

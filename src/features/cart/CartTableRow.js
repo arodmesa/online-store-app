@@ -1,16 +1,18 @@
 import '../../websitePages/PortraitDetailsPage.css';
 import './CartTableRow.css';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { removePortraitFromCart, incrementAmountOfOnePortraitInCart, decrementAmountOfOnePortraitInCart } from './portraitsInCartSlice';
 
 function CartTableRow({portraitID, price, image, name, amount, subtotal}){
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     return(
         <>
             <tr>
                 <th>
                     <div className='org_imgCart'>
-                        <img className='img_cart' src={image} alt='product'></img>
+                        <img className='img_cart' src={image} alt='product' onClick={()=>{navigate(`/product/ID/${portraitID}`)}}></img>
                         <h4 className='h4_cart'>{name}</h4>
                     </div>
                 </th>

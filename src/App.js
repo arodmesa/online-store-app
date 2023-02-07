@@ -14,8 +14,6 @@ const LazyHome= lazy(()=>import ('./websitePages/HomePage'));
 const LazyAbout= lazy(()=>import ('./websitePages/AboutPage'));
 const LazyCart= lazy(()=>import ('./websitePages/CartPage'));
 
-// AGREGAR FUNCIONALIDAD DE VER DETALLES DEL PRODUCTO DANDO CLICK EN LA IMAGEN DEL CART
-// AGREGAR PANEL DE NOTIFICACIONES
 // CHEQUEAR COMENTARIOS EN LOS ARCHIVOS emailFunctionalities y commonFunctions para agregar otras funcionalidades
 // CHEQUEAR COMENTARIOS EN portraitsInTheCartSlice
 // CHEQUEAR COMENTARIOS EN el archivo cartFunctionalities

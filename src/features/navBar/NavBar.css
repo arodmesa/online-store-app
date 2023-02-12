@@ -1,79 +1,114 @@
-@font-face {
-    font-family: 'Bebas';
-    src: url('./BebasNeue-Regular.ttf');
+@keyframes grow{
+    from{height: 0; display: none;}
+    to{height: 350px; display: block;}
 }
-.main_nav{
+.mainNav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 85vw;
-}
-.logo_nav{
-    max-width: 170px;
-}
-.div_nav{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    column-gap: 15px;
-}
-.h6_nav{
-    margin: 0;
-    padding: 0;
+    width: 100vw;
     position: absolute;
-    right: -55%;
-    top: -8px;
-    background-color: rgba(192, 192, 192, 0.5);
-    width: 20px;
-    height: 20px;
-    text-align: center;
-    border-radius: 15px;
-    color: red;
-    font-weight: bolder;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    top: 0;
+    color: white;
+    min-height: 90px;
 }
-.fa-shopping-cart{
-    font-size: larger;
+.logoNav{
+    width: 80px;
+    align-self: flex-start;
+    margin-top: 20px;
 }
-.test{
-    position: relative;
+.divNav{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-right: 15px;
+    padding-left: 5px;
+    font-size: 1.05em;
+    background-color: #010734;
+    height: 350px;
 }
 .navlink{
-    font-size: x-large;
-    font-family: 'Bebas','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-decoration: none;    
-    color: black;
+    margin-top: 20px;
+    text-decoration: none;
+    color: white;
 }
-.navlink:visited{
-    color: black;
-}
-
 .active{
+    font-size: 1.1em;
     text-decoration: underline;
 }
-.red_cart{
-    color: red;
+.fa-bars{
+    margin-right: 20px;
+    font-size: 1.5em;
+}
+.cartLink{
+    position: relative;
+}
+.fa-shopping-cart .fa-sign-in{
+    font-size: 1.1em;
+}
+.floatingNumber{
+    position: absolute;
+    top: -45px;
+    left: 17px;
+    font-size: 0.9em;
+}
+@media (max-width: 550px){
+    .divNav{
+        animation-name: grow;
+        animation-duration: 0.7s;
+    }
+}
+@media (min-width: 551px){
+    .logoNav{
+        margin-top: 10px;
+        width: 95px;
+    }
+    .divNav{
+        flex-direction: row;
+        column-gap: 25px;
+        height: 75px;
+        width: auto;
+        background-color: unset;
+        margin-right: 25px;
+        padding-right: 0;
+        justify-content: center;
+    }
+    .navlink{
+        font-size: 1.3em;
+    }
+    .active{
+        font-size: 1.3em;
+        font-weight: bolder;
+    }
+    .floatingNumber{
+        top: -55px;
+        left: 22px;
+    }
+}
+@media (min-width: 901px){
+    .divNav{
+        align-self: flex-start;
+        margin-right: 50px;
+        margin-top: 15px;
+    }
+    .logoNav{
+        width: 120px;
+        margin-top: 15px;
+        margin-left: 20px;
+    }
+    .logoNav:hover{
+        cursor: pointer;
+    }
+    .navlink{
+        font-size: 1.5em;
+    }
+    .active{
+        font-size: 1.5em;
+    }
+    .floatingNumber{
+        top: -60px;
+        font-size: 0.82em;
+        left: 24px;
+    }
 }
 
-@media(max-width:550px) and (min-width:330px){
-    .main_nav{
-        margin-top: 20px;
-    }
-    .logo_nav{
-        width: 100px;
-    }
-    .navlink{
-        font-size: medium;
-    }
-}
-@media(max-width:330px){
-    .logo_nav{
-        width: 75px;
-    }
-    .navlink{
-        font-size: small;
-    }
-    .main_nav{
-        margin-top: 20px;
-    }
-}

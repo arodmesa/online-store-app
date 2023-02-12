@@ -23,8 +23,7 @@ function HomePage(){
                     displayNotification("Some error has occurred, check your internet connection or try again later...", 2000);
                 }else{
                     arrayOfComponents.push(
-                        <Portrait key={portraitData.id} imgClassName={'imagen_portada'} 
-                                  portraitID={portraitData.id} price={portraitData.webformatHeight} 
+                        <Portrait key={portraitData.id} portraitID={portraitData.id} price={portraitData.webformatHeight}                                   
                                   tags={portraitData.tags} imagePreview={portraitData.webformatURL} 
                         />
                     )
@@ -33,40 +32,46 @@ function HomePage(){
             setHomePagePortraits(arrayOfComponents.slice());
         })()      
       },[])
-    const cardsArray = cardsData.map((value,index)=>{
+    const cardsArray = cardsData.map((cardData,index)=>{
         return(
-            <Card key={index} icono_card={value.icono_card} titulo_card={value.titulo_card} texto_card={value.texto_card} />
+            <Card key={index} iconCard={cardData.iconCard} titleCard={cardData.titleCard} textCard={cardData.textCard} />
         )
     })       
     return(
-        <div className='div_Home'>
-            <div className='section1'>
-                <h1 className="h1_title">Find the Perfect Portrait</h1>
-                <p className='p_texto'>Lorem ipsum dolor sit amet consectetur adipiscing, elit erat sodales sem commodo facilisi, nibh semper lobortis proin duis. Accumsan class nunc tempor eros arcu elementum netus congue cum risus purus libero quis, etiam dis sagittis nec porta enim parturient diam sociis pharetra sodales.</p>
-                <button type='button' className='btn_home' onClick={()=>navigate('products/pageNum/1')} >SHOP NOW</button>                       
+        <div className='divHome divColumn'>
+            <div className='section1 divColumn'>
+                <h1 className="section1Title">Portraitify</h1>
+                <p className='section1Text'>...the right portrait awaits you</p>
+                <button type='button' className='shopNowBtn' onClick={()=>navigate('products/pageNum/1')} >SHOP NOW</button>                       
             </div>
-            <div className='section2'>
-                <h2 className='h2_title'>Featured Products</h2>
-                <div className='org_img_preview'>
+            <div className='section2 divColumn'>
+                <h2 className='section2Title'>Featured Portraits</h2>
+                <div className='organizeImgPreview'>
                     {homePagePortraits}
                 </div>
-                <button className='btn_home s2' onClick={()=>navigate('products/pageNum/1')} >All products</button>
+                <button className='shopNowBtn section2Btn' onClick={()=>navigate('products/pageNum/1')} >All portraits</button>
             </div>
             <div className='section3'>
                 {cardsArray}
             </div>
-            <div className='section4'>
-                <div className='div_email'>
-                    <div className='org_p_texto'>
-                        <h3 className='h3_home'>Join our newsletter and get 10% off</h3>
-                        <p className='p_texto subs_text'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto, at sed omnis corporis doloremque possimus velit! Repudiandae nisi odit, aperiam odio ducimus, obcaecati libero et quia tempora excepturi quis alias?</p>
-                    </div>                    
-                    <div className='org_contenido'>
-                        <input type='email' placeholder='Enter Email' className={'email_input'+((isButtonEnabled)?'':' red_input')} required onChange={enableSubscribeButton} value={userEmailAddress}></input>
-                        <button type='button' className={'btn_home subs'+ ((isButtonEnabled)?'':' disabledBtn')} disabled={!isButtonEnabled} onClick={sendSubscriptionEmail}>Subscribe</button>
-                    </div>                    
-                </div>
-            </div>
+            <div className='section4 divColumn'>
+                <h3 className='section4Title'>Join our newsletter and get 10% off</h3>
+                <p className='textSection4'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto, at sed omnis corporis doloremque possimus velit! Repudiandae nisi odit, aperiam odio ducimus, obcaecati libero et quia tempora excepturi quis alias?</p>                   
+                <div className='divRow'>
+                    <input type='email' placeholder='Enter Email' className={'emailInput'+((isButtonEnabled)?'':' redInput')} required 
+                           value={userEmailAddress} onChange={enableSubscribeButton} 
+                           onKeyDown={(event)=>{
+                            if(isButtonEnabled && event.key==='Enter'){
+                                sendSubscriptionEmail();
+                            }
+                        }}>
+                    </input>
+                    <button type='button' className={'sendEmailBtn'+ ((isButtonEnabled)?'':' disabledBtn')} 
+                            disabled={!isButtonEnabled} onClick={sendSubscriptionEmail}>
+                            Subscribe 🔔
+                    </button>
+                </div>                    
+             </div>
         </div>
     );
 }

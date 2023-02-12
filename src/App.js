@@ -1,6 +1,6 @@
 import './App.css';
 import {Routes, Route} from 'react-router-dom';
-import { lazy, Suspense} from 'react';
+import { lazy, Suspense, useState} from 'react';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import NavBar from './features/navBar/NavBar';
@@ -16,16 +16,26 @@ const LazyAbout= lazy(()=>import ('./websitePages/AboutPage'));
 const LazyCart= lazy(()=>import ('./websitePages/CartPage'));
 
 // Arreglar el componente Error para q tenga una foto offline 
-// corregir q cuando no encuentre coincidencias redirija a una pagina q diga no portraits finded
+// corregir q cuando no encuentre coincidencias ponga alguna foto the oops o similar
 
 function App() {
+  const [isHorizontalBarsVisible, setHorizontalBarsVisibility] = useState(true);
   const areAllPortraitsLoaded = useSelector((state)=>state.areAllPortraitsLoadedReducer.areLoaded);
   const percentageOfLoadedPortraits = useSelector((state)=>state.percentageOfLoadedPortraitsReducer.percentage);
   
+  function focusOutsideNavBar(){
+    if (!isHorizontalBarsVisible){
+      setHorizontalBarsVisibility(true);
+    }
+  }
+  function desactivateHorizontalBarsVisibility(){
+    setHorizontalBarsVisibility(false);
+  }
+
   return (
-    <div className="App">
+    <div className="App" onClick={focusOutsideNavBar}>
       <NotificationBar />
-      <NavBar />
+      <NavBar isHorizontalBarsVisible={isHorizontalBarsVisible} desactivateHorizontalBarsVisibility={desactivateHorizontalBarsVisibility} />
       <Routes>
         <Route path='/' element={
           <Suspense fallback={<Animation />}>
@@ -66,8 +76,8 @@ function App() {
         <Route path='error' element={<ErrorPage />} />
         <Route path='*' element={<PageNotFound />} />
       </Routes>
-      <footer className='pixabay'>
-        <h4 className='h4_pixabay'>All images were obtained from <a className='a_pixabay' href='https://pixabay.com/' target='_blank' rel="noreferrer">Pixabay API</a> . Thanks to the developers.</h4>
+      <footer className='pixabayDiv'>
+        <h4 className='footerPixabay'>All images were obtained from <a className='pixabayLink' href='https://pixabay.com/' target='_blank' rel="noreferrer">Pixabay API</a>. Thanks to the developers.</h4>
       </footer>
     </div>
   );

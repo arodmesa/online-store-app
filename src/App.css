@@ -4,32 +4,30 @@
   align-items: center;
   justify-content: center;
   width: 100vw;
+  position: relative; 
+}
+.pixabayDiv{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1em;
+  max-width: 90vw;
+}
+.pixabayLink{
+  color: rgb(230, 32, 23);
+}
+.pixabayLink:visited{
+  color: rgb(230, 32, 23);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-.pixabay{
-  margin-top: 20px;
-}
-.a_pixabay{
-  color: red;
-}
-.a_pixabay:visited{
-  color: red;
-}
-.h4_pixabay{
-  font-size: larger;
-}
-
-@media (max-width:710px) and (min-width:470px){
-  .h4_pixabay{
-    font-size: small;
+@media (min-width: 551px){
+  .pixabayDiv{
+    font-size: 1.15em;
   }
 }
-@media (max-width:470px) {
-  .h4_pixabay{
-    font-size: xx-small;
+@media (min-width: 991px){
+  .pixabayDiv{
+    font-size: 1.25em;
   }
 }

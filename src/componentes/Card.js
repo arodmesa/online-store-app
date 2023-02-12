@@ -1,13 +1,11 @@
 import './Card.css';
-function Card({icono_card, titulo_card, texto_card}){
+function Card({iconCard, titleCard, textCard}){
     return(
-        <div className="div_card">
-            <div className='org_card'>
-                <img className='img_card' src={icono_card} alt='icono'></img>
-            </div>       
-            <div className='org_text_card'>
-                <h3 className='h3_card'>{titulo_card}</h3>
-                <p className='p_card'>{texto_card}</p>
+        <div className="divCard divColumn">
+            <img className='imgCard' src={iconCard} alt='icono'></img>      
+            <div className='divColumn organizeTextInCard'>
+                <h3 className='cardTitle'>{titleCard}</h3>
+                <p className='cardText'>{textCard}</p>
             </div>                 
         </div>
     );

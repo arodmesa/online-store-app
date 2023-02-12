@@ -7,7 +7,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
-
+body::-webkit-scrollbar{
+  width: 7px;
+}
+body::-webkit-scrollbar-track {
+  background: #0033ac; 
+}
+body::-webkit-scrollbar-thumb {
+  background-color: skyblue;    /* color of the scroll thumb */
+  border-radius: 1px;       /* roundness of the scroll thumb */
+  border: 2px solid #0033ac;  /* creates padding around scroll thumb */
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

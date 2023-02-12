@@ -37,10 +37,10 @@ function resetSearchFilters(shouldResetPage){
 }  
 function navigateToPageOne(navigate, currentPage){
   if (currentPage!=='1'){
-      navigate('products/pageNum/1');
+      navigate('/products/pageNum/1');
   }
   else{
-      getData(1);
+      getData(navigate, 1);
   }  
 }  
 function changeActiveCategoryAndUrlCategory(categoryName){  
@@ -80,7 +80,7 @@ async function getData(navigate, pageNumber){
       store.dispatch(changeAmountOfPortraitsFinded(obtainedResponse.totalHits));
       navigate(`/products/pageNum/${pageNumber}`);
     }
-  }catch{
+  }catch(error){
     displayNotification('Some error has occurred...', 2000);
   }
       

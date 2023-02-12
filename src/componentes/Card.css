@@ -1,55 +1,55 @@
-@font-face {
-    font-family: 'Right';
-    src: url('./Righteous-Regular.ttf');
-}
-.div_card{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content:flex-start;
-    width: 20vw;
-    height: auto;
-    background: rgb(65,62,106);
-    background: linear-gradient(45deg, rgba(65,62,106,1) 7%, rgba(0,212,255,1) 91%, rgba(1,153,194,1) 100%);
+.divCard{
+    /* ff 3.6+ */
+    background:-moz-linear-gradient(142deg, rgba(252, 170, 132, 1) 3%, rgba(47, 128, 237, 1) 15%, rgba(47, 128, 237, 1) 85%, rgba(252, 170, 132, 1) 97%); 
+    /* safari 5.1+,chrome 10+ */
+    background:-webkit-linear-gradient(142deg, rgba(252, 170, 132, 1) 3%, rgba(47, 128, 237, 1) 15%, rgba(47, 128, 237, 1) 85%, rgba(252, 170, 132, 1) 97%);
+    /* opera 11.10+ */
+    background:-o-linear-gradient(142deg, rgba(252, 170, 132, 1) 3%, rgba(47, 128, 237, 1) 15%, rgba(47, 128, 237, 1) 85%, rgba(252, 170, 132, 1) 97%);
+    /* ie 6-9 */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FCAA84', endColorstr='#FCAA84', GradientType=1 );
+    /* ie 10+ */
+    background:-ms-linear-gradient(142deg, rgba(252, 170, 132, 1) 3%, rgba(47, 128, 237, 1) 15%, rgba(47, 128, 237, 1) 85%, rgba(252, 170, 132, 1) 97%);
+    /* global 94%+ browsers support */
+    background:linear-gradient(142deg, rgba(252, 170, 132, 1) 3%, rgba(47, 128, 237, 1) 15%, rgba(47, 128, 237, 1) 85%, rgba(252, 170, 132, 1) 97%);
+    height: 400px;
+    min-width: 270px;
     border-radius: 15px;
-    color: black;
-    font-weight: bolder;
-    padding-bottom: 18px;
+    margin-right: 15px;
+    color: white;
+    text-shadow: rgb(0, 0, 0) 3px 0px 0px, rgb(0, 0, 0) 2.83487px 0.981584px 0px, rgb(0, 0, 0) 2.35766px 1.85511px 0px, rgb(0, 0, 0) 1.62091px 2.52441px 0px, rgb(0, 0, 0) 0.705713px 2.91581px 0px, rgb(0, 0, 0) -0.287171px 2.98622px 0px, rgb(0, 0, 0) -1.24844px 2.72789px 0px, rgb(0, 0, 0) -2.07227px 2.16926px 0px, rgb(0, 0, 0) -2.66798px 1.37182px 0px, rgb(0, 0, 0) -2.96998px 0.42336px 0px, rgb(0, 0, 0) -2.94502px -0.571704px 0px, rgb(0, 0, 0) -2.59586px -1.50383px 0px, rgb(0, 0, 0) -1.96093px -2.27041px 0px, rgb(0, 0, 0) -1.11013px -2.78704px 0px, rgb(0, 0, 0) -0.137119px -2.99686px 0px, rgb(0, 0, 0) 0.850987px -2.87677px 0px, rgb(0, 0, 0) 1.74541px -2.43999px 0px, rgb(0, 0, 0) 2.44769px -1.73459px 0px, rgb(0, 0, 0) 2.88051px -0.838247px 0px;
+
 }
-.org_card{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 90px;
-    height: 90px; 
-    border-radius: 20px;
-    margin-top: 15%;
-}
-.org_text_card{
+.divColumn{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin-top: 15%;
 }
-.img_card{
-    width: 70px;
-    height: 70px;    
-}
-.h3_card{
-    font-family: 'Right', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size:  calc(0.7em + 0.5vw);
-}
-.p_card{
+.organizeTextInCard{
+    width: 100%;
     text-align: center;
-    margin-left: 7px;
-    margin-right: 7px;
+}
+.imgCard{
+    width: 40px;
+    background-color: rgba(252, 170, 132, 1);
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 25px;
+}
+.cardTitle{
+    font-family: monospace, Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+}
+.cardText{
     font-family: 'Times New Roman', Times, serif;
-    font-size:  calc(0.6em + 0.5vw);
+    font-size: 1.2em;
+    margin: 0 15px;
+    word-spacing: 5px;
+    line-height: 1.5em;
 }
 
-@media (max-width:850px){
-    .div_card{
-        width: 28vw;
+@media (min-width: 991px){
+    .divCard{
+        width: 300px;
     }
 }

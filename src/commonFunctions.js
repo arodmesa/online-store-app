@@ -13,6 +13,7 @@ import { changeAmountOfResultsPages } from "./features/paging/amountOfResultsPag
 import { changePortraitsData } from "./features/portraits/portraitsDataSlice";
 import { changeAmountOfPortraitsFinded } from "./features/portraits/amountOfPortraitsFindedSlice";
 import { displayNotification } from "./features/notificationBar/notificationFunctionalities";
+import { changeSearchInputText } from "./features/lateralSearchBar/searchInputTextSlice";
 import fetchData from "./features/urlFetch/fetchData";
 import { apiURL } from "./constants";
 
@@ -30,6 +31,7 @@ function resetSearchFilters(shouldResetPage){
     store.dispatch(changeUserEmailAddress(''));
     store.dispatch(switchEnableButtonState(false));
     store.dispatch(resetDefaultAmount());
+    store.dispatch(changeSearchInputText(''));
     if (shouldResetPage){
       resetLoadedPortraitsProcess();
       store.dispatch(changeCurrentPageNumber(1))
@@ -63,7 +65,7 @@ async function getData(navigate, pageNumber){
   try{
     const storeCurrentState = store.getState();
     const {categoryURL, colorURL, searchTextURL, pageURL} = storeCurrentState.urlPartsReducer
-    store.dispatch(changeCurrentPageNumber(pageNumber));
+    store.dispatch(changeCurrentPageNumber(Number(pageNumber)));
     const obtainedResponse = await fetchData(apiURL + searchTextURL + categoryURL + colorURL + pageURL);
     if (obtainedResponse.customError){
       navigate('/error');

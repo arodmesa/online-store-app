@@ -288,14 +288,16 @@
     .section3{
         align-items: center;
         justify-content: center;
-        column-gap: 4vw;
+        column-gap: 5vw;
         overflow-x: unset;
     }
     .section4{
-        max-width: 800px;
+        width: 75vw;
     }
     .section4Title{
+        width: 100%;
         font-size: 1.65em;
+        text-align: left;
     }
     .textSection4{
         font-size: 1.15em;

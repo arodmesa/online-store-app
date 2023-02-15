@@ -1,11 +1,16 @@
 import './Page.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { handlePageButtonCliked } from './pagingFunctionalities';
-function Page({pageNumber}){
+function Page({pageNumber, startingPageNumberBtn}){
     const navigate = useNavigate();
+    const params= useParams();
+    const currentPage = Number(params.page);
+    const endingVisiblePageNumber = startingPageNumberBtn + 4;
+    const displayClass = (pageNumber > endingVisiblePageNumber || pageNumber < startingPageNumberBtn)?' noDisplay':'';
+    const activeClass = (pageNumber === currentPage)?' pageActive':'';
     return(
-        <div className="pag" onClick={()=>handlePageButtonCliked(navigate, pageNumber)}>
-            <h4 className="h4_pag" >{pageNumber}</h4>
+        <div className={"pageDiv" + displayClass + activeClass} onClick={()=>{if(currentPage!==pageNumber){handlePageButtonCliked(navigate, pageNumber)}}}>
+            <h4 className="pageNumber" >{pageNumber}</h4>
         </div>
     );    
 }

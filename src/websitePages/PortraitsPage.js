@@ -3,8 +3,9 @@ import './HomePage.css';
 import Portrait from "../features/portraits/Portrait";
 import Page from "../features/paging/Page";
 import LateralSearchBar from "../features/lateralSearchBar/LateralSearchBar";
+import BackgroundForNavBar from '../features/backgroundForNavBar/BackgroundForNavBar';
 import {useParams, useNavigate} from 'react-router';
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getData } from '../commonFunctions';
 import { changePageURL } from '../features/urlFetch/urlPartsSlice';
@@ -17,39 +18,58 @@ function PortraitsPage(){
     const currentPageNumber = useSelector((state)=>state.currentPageNumberReducer.currentPageNumber);
     const amountOfResultsPages = useSelector((state)=>state.amountOfResultsPagesReducer.amountOfResultsPages);
     const amountOfPortraitsFinded = useSelector((state)=>state.amountOfPortraitsFindedReducer.amountOfPortraitsFinded);
+    const [startingPageNumberBtn, setStartingPageNumberBtn] = useState(Math.floor(Number(params.page)/5 - 0.001) * 5 + 1);
     useEffect(()=>{
-        if (params.page!==currentPageNumber){
+        if (Number(params.page)!==currentPageNumber){
             dispatch(changePageURL(params.page));
             getData(navigate, params.page);
-            console.log('useEffect update activo');
+            calculateStartingPageNumberBtn(params.page);
         }        
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     })
     const arrayOfPortraitComponents = portraitsData.map((portraitData, index)=>{
        return(
-            <Portrait key={index} portraitID={portraitData.id} price={portraitData.webformatHeight} tags={portraitData.tags} imagePreview={portraitData.webformatURL} />
+            <Portrait key={index} portraitID={portraitData.id} price={portraitData.webformatHeight} tags={portraitData.tags} imagePreview={portraitData.webformatURL} isResultsPage={true}/>
         )
     })        
     const arrayOfPageComponents=[];   
     for (let i=0; i<amountOfResultsPages; i++){
         arrayOfPageComponents.push(
-            <Page key={i} pageNumber={i+1} />
+            <Page key={i} pageNumber={i+1} startingPageNumberBtn={startingPageNumberBtn}/>
         );
     }
-
+    function calculateStartingPageNumberBtn(pageNumber){
+        pageNumber = Number(pageNumber);
+        const newStartingPageNumberBtn = Math.floor(pageNumber/5 - 0.001) * 5 + 1;
+        setStartingPageNumberBtn(newStartingPageNumberBtn);
+    }
+    function decrementStartingPageNumberBtn(){
+        if (startingPageNumberBtn > 1){
+            setStartingPageNumberBtn((oldStartingPage)=>oldStartingPage - 5)
+        }
+    }
+    function incrementStartingPageNumberBtn(){
+        if (startingPageNumberBtn + 5 <= amountOfResultsPages){
+            setStartingPageNumberBtn((oldStartingPage)=>oldStartingPage + 5)
+        }
+    }
     return(
-        <div className='divPpag'>
-            <LateralSearchBar />
-            <div className="org_elem">
-                <h4 className="prod_encontrados">{`${amountOfPortraitsFinded} Portraits Found`}</h4>
-                <div className='org_prod'>
-                    {arrayOfPortraitComponents}
-                </div>                
-                <div className="org_pag">
-                    {arrayOfPageComponents}
-                </div>                
+        <>
+            <BackgroundForNavBar />
+            <div className='divPortraitsPage'>  
+                <LateralSearchBar />          
+                <div className="organizeResultsDiv divColumn">
+                    <h4 className="amountOfResults">{`${amountOfPortraitsFinded} Portraits Found`}</h4>
+                    <div className='organizePortraits'>
+                        {arrayOfPortraitComponents}
+                    </div>                
+                    <div className="organizePageButtons">
+                        <i className="fa fa-chevron-circle-left" onClick={decrementStartingPageNumberBtn}></i>
+                        {arrayOfPageComponents}
+                        <i className="fa fa-chevron-circle-right" onClick={incrementStartingPageNumberBtn}></i>
+                    </div>                
+                </div>
             </div>
-        </div>
+        </>        
     );
 }
 export default PortraitsPage;

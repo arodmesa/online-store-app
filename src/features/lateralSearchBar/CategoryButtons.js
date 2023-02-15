@@ -4,13 +4,13 @@ import { useSelector} from 'react-redux';
 import { navigateToPageOne } from '../../commonFunctions';
 import { changeActiveCategoryAndUrlCategory } from '../../commonFunctions';
 
-function CategoryButtons({categoryName}){
+function CategoryButtons({categoryName, minimizeLateralBar}){
     const params= useParams();
     const activeCategoryName = useSelector((state)=>state.activeCategoryReducer.category);
     const navigate = useNavigate();
   
     return(
-        <h4 className={(categoryName === activeCategoryName)?'h4_category checked':'h4_category'} onClick={()=>{changeActiveCategoryAndUrlCategory(categoryName); navigateToPageOne(navigate, params.page)}}>{categoryName}</h4>
+        <h4 className={(categoryName === activeCategoryName)?'category checked':'category'} onClick={()=>{changeActiveCategoryAndUrlCategory(categoryName); navigateToPageOne(navigate, params.page); minimizeLateralBar(true)}}>{categoryName}</h4>
     )
 }
 export default CategoryButtons;

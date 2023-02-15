@@ -40,3 +40,21 @@
         font-size: 1.35em;
     }
 }
+@media (min-width: 991px){
+    .imgResultsPage{
+        width: 30vw;
+        max-width: 380px;
+    }
+    .tagsResultsPage{
+        font-size: 1.2em;
+    }
+}
+@media (min-width: 1451px){
+    .imgResultsPage{
+        width: 20vw;
+        max-width: 350px;;
+    }
+    .tagsResultsPage{
+        font-size: 1.2em;
+    }
+}

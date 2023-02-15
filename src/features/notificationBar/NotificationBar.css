@@ -33,7 +33,7 @@
         font-size: 1.15em;
     }
 }
-@media (min-width: 991px) {
+@media (min-width: 901px) {
     .divNotificationBar{
         font-size: 1.3em;
     }

@@ -1,72 +1,205 @@
-.div_search{
-    height: 100%;
-    width: 15vw;
-    position: sticky;
-    top:0;
+@keyframes changeColor {
+    from{color: black;}
+    to{color: red;}
+}
+@keyframes growDiv {
+    from {width: 0;}
+    to{width: 100vw;}
+}
+@keyframes changeSize {
+    from{font-size: 1.2em; width: 160px; height: 40px;}
+    to{font-size: 1.35em; width: 178px; height: 45px;}
+}
+.arrowStyle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    text-align: center;
+    background-color: skyblue;
+    width: 30px;
+    height:30px;
+    border-radius: 50%;
+    font-size: 1.6em;
+    font-weight: bolder;
+    animation-name: changeColor;
+    animation-duration: 0.4s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+.fa-angle-double-right{    
+    top: 50vh;
+    left: 5px;    
+}
+.searchBarContainer{
+    position: fixed;
+    top: 0;
     left: 0;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    row-gap: 15px;
-    padding-top: 15px;
-}
-.search_input{
-    display: flex;
-    column-gap: 7px;
     justify-content: center;
     align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    overflow-y: auto;
+    animation-name: growDiv;
+    animation-duration: 0.7s
 }
-.search_entrada{
-    font-family: 'Times New Roman', Times, serif;
-    font-size: calc(0.7em + 0.4vw);
-    font-weight: bold;
+.fa-angle-double-left{
+    top: 50vh;
+    right: 10px; 
+}
+.divSearchBar{    
+    margin-top: 20vh;
+    row-gap: 20px;
+}
+.divRow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.organizeSearchInput{
+    border-width: 2px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: black;
+    height: 40px;
+    padding: 0 10px;
+}
+.searchInput{
+    border: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.95em;
+}
+.searchInput:focus{
+    outline: none;
 }
 .fa-search{
-    font-size: large;
+    font-size: 1em;
 }
-.h3_search{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: calc(0.9em + 0.3vw);
-    font-weight: bolder;
-    color: rgba(201, 29, 29, 0.915);
-}
-.org_cat{
-    display: grid;
-    grid-template-columns: auto auto;
-    row-gap: 10px;
-    column-gap: 15px;
-}
-.btn_SearchBar{
-    width: 125px;
-    height: 40px;
-    font-size: medium;
-}
-.fa-search:hover{
-    cursor: pointer;
-}
-.btn_SearchBar:hover{
-    cursor: pointer;
-}
-.div_colores{
+.divColumn{
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
-.org_colores{
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    align-items: center;
+.divCategories{
+    width: 100vw;
     row-gap: 10px;
-    margin-bottom: 15px;
 }
-.h4_category{
-   margin: 0;
+.divColors{
+    position: relative;
+    padding-bottom: 100px;
 }
-
-@media (max-width:850px){
-    .div_search{
-        position:static;
-        height: auto;
-        width: 80vw;
+.lateralBarHeaders{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.6em;
+    margin-top: 20px;
+}
+.organizeCategories{
+    width: 100vw;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 9vw;
+    row-gap: 35px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.2em;
+}
+.organizeColors{
+    width: 100vw;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 20vw;
+    row-gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.clearFiltersBtn{
+    position: absolute;
+    bottom: 20px;
+    background-color: skyblue;
+    border-color: black;
+    border-width: 2px;
+    border-radius: 10px;
+    height: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.3em;
+    letter-spacing: 3px;
+    animation-name: changeSize;
+    animation-duration: 0.4s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    color: white;
+    text-shadow: rgb(0, 0, 0) 3px 0px 0px, rgb(0, 0, 0) 2.83487px 0.981584px 0px, rgb(0, 0, 0) 2.35766px 1.85511px 0px, rgb(0, 0, 0) 1.62091px 2.52441px 0px, rgb(0, 0, 0) 0.705713px 2.91581px 0px, rgb(0, 0, 0) -0.287171px 2.98622px 0px, rgb(0, 0, 0) -1.24844px 2.72789px 0px, rgb(0, 0, 0) -2.07227px 2.16926px 0px, rgb(0, 0, 0) -2.66798px 1.37182px 0px, rgb(0, 0, 0) -2.96998px 0.42336px 0px, rgb(0, 0, 0) -2.94502px -0.571704px 0px, rgb(0, 0, 0) -2.59586px -1.50383px 0px, rgb(0, 0, 0) -1.96093px -2.27041px 0px, rgb(0, 0, 0) -1.11013px -2.78704px 0px, rgb(0, 0, 0) -0.137119px -2.99686px 0px, rgb(0, 0, 0) 0.850987px -2.87677px 0px, rgb(0, 0, 0) 1.74541px -2.43999px 0px, rgb(0, 0, 0) 2.44769px -1.73459px 0px, rgb(0, 0, 0) 2.88051px -0.838247px 0px;
+}
+@media (min-width: 551px){
+    .divSearchBar{
+        margin-top: 35vh;
+    }
+    .arrowStyle{
+        font-size: 1.8em;
+        height: 38px;
+        width: 38px;
+    }
+    .lateralBarHeaders{
+        font-size: 1.8em;
+    }
+    .organizeCategories{
+        column-gap: 22vw;
+        font-size: 1.4em;
+    }
+    .organizeColors{
+        column-gap: 25vw;
+        row-gap: 35px;
+    }
+}
+@media (min-width: 901px){
+    .searchBarContainer{
+        position: static;
+        top: unset;
+        left: unset;
+        overflow-y: unset;
+        background-color: unset;
+        margin-top: 250px;
+        width: 300px;
+    }
+    .divSearchBar{
+        width: 30vw;
+        margin-top: 0;
+    }
+    .searchInput{
+        width: 210px;
+        font-size: 1.1em;
+    }
+    .fa-search{
+        font-size: 1.5em;
+    }
+    .fa-search:hover{
+        cursor: pointer;
+    }
+    .arrowStyle{
+        display: none;
+    }
+    .divCategories{
+        width: 100%;
+    }
+    .organizeCategories{
+        grid-template-columns: auto auto;
+        column-gap: 5vw;
+        font-size: 1.1em;
+        width: auto;
+    }
+    .divColors{
+        width: 100%;
+    }
+    .organizeColors{
+        column-gap: 5vw;
+        font-size: 0.9em;
+        width: auto;
+    }
+    .clearFiltersBtn:hover{
+        cursor: pointer;
     }
 }

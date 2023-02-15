@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const currentPageNumberSlice = createSlice({
     name: 'currentPageNumber',
-    initialState: {currentPageNumber: 1},
+    initialState: {currentPageNumber: 0},
     reducers: {
         changeCurrentPageNumber(state, action){
             const newPageNumber = action.payload;

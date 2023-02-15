@@ -15,7 +15,7 @@ function NavBar({isHorizontalBarsVisible, desactivateHorizontalBarsVisibility}){
     const [isMobileDevice, setIsMobileDevice] = useState(matchMedia.matches);
     const navigationLinks =<div className='divNav'>
                                 <NavLink className='navlink' to='/' onClick={()=>resetSearchFilters(true)}>Home</NavLink>            
-                                <NavLink className='navlink' to='products/pageNum/1'>Products</NavLink>
+                                <NavLink className='navlink' to='products/pageNum/1'>Portraits</NavLink>
                                 <NavLink className='navlink' to='/about' onClick={()=>resetSearchFilters(true)}>About</NavLink>
                                 <NavLink className='navlink cartLink' to='/cart' onClick={()=>resetSearchFilters(true)} >
                                     <h6 className='floatingNumber'>{amountOfUniquePortraitsInCart}</h6>
@@ -23,7 +23,7 @@ function NavBar({isHorizontalBarsVisible, desactivateHorizontalBarsVisibility}){
                                 </NavLink>
                                 <NavLink className='navlink' to='/' onClick={()=>resetSearchFilters(true)} ><i className='fa fa-sign-in'></i></NavLink>
                             </div>
-    let contentToRender
+    let contentToRender;
     if (isMobileDevice){
         contentToRender = ((isHorizontalBarsVisible)?<i className="fa fa-bars" onClick={(event)=>{event.preventDefault(); desactivateHorizontalBarsVisibility()}}></i>:navigationLinks);
     }else{

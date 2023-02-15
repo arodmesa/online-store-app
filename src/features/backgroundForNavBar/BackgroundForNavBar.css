@@ -1,0 +1,30 @@
+.simpleBackground{
+    height: 45px;
+    width: 45px;
+    background-color: #010734;
+    position: absolute;
+    top: 23px;
+    right: 8px;
+    z-index: -1;
+    border-radius: 50%;
+}
+.paddingFromTop{
+    height: 120px;
+}
+@media (min-width: 551px){
+    .simpleBackground{
+        top: 0;
+        right: 0;
+        border-radius: 3px;
+        width: 100vw;
+        height: 80px;
+    }
+}
+@media (min-width: 901px){
+   .simpleBackground{
+        height: 98px;
+   }
+   .paddingFromTop{
+    height: 170px;
+   }
+}

@@ -18,6 +18,7 @@ const LazyCart= lazy(()=>import ('./websitePages/CartPage'));
 // Arreglar el componente Error para q tenga una foto offline 
 // corregir q cuando no encuentre coincidencias ponga alguna foto the oops o similar
 // Arreglar q cuando pongan manualmente una pag en la url que sea mas grande q el numero de pag ponga oops o similar
+// Arreglar como se ve el Componente de % y el de Animation
 
 function App() {
   const [isHorizontalBarsVisible, setHorizontalBarsVisibility] = useState(true);

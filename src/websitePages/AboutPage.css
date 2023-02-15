@@ -1,19 +1,39 @@
-.about_div{
+.divColumn{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    row-gap: 20px;
-    margin-bottom: 30vh;
-    text-align: justify;
 }
-@media (max-width:1000px) and (min-width:500px){
-    .p_about{
-        font-size: medium;
+.divAbout{
+    justify-content: flex-start;
+    min-height: 75vh;
+}
+.aboutTitle{
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.aboutText{
+    width: 90vw;
+    text-align: justify;
+    font-size: calc(0.75em + 1vw);
+    font-family: Arial, Helvetica, sans-serif;
+}
+@media (min-width: 551px){
+    .aboutTitle{
+        font-size: 2.5em;
+    }
+    .aboutText{
+        font-size: 1.2em;
     }
 }
-@media (max-width:500px){
-    .p_about{
-        font-size: small;
+@media (min-width: 901px){
+    .divAbout{
+        min-height: 70vh;
+    }
+    .aboutTitle{
+        font-size: 2.6em;
+    }
+    .aboutText{
+        font-size: 1.4em;
+        max-width: 1100px;
     }
 }

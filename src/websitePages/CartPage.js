@@ -3,6 +3,7 @@ import {useNavigate} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { clearShoppingCart } from '../features/cart/portraitsInCartSlice';
 import CartTableRow from '../features/cart/CartTableRow';
+import BackgroundForNavBar from '../features/backgroundForNavBar/BackgroundForNavBar';
 import { pay } from '../features/cart/cartFunctionalities';
 
 function CartPage(){

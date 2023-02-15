@@ -33,7 +33,7 @@ const portraitsInCartSlice = createSlice({
                 }       
                 setTimeout(()=>store.dispatch(incrementAmountOfUniquePortraitsInCart()), 0);         
             }
-            setTimeout(()=>{dispatchCalculateTotalPrice();displayNotification('Portrait added to the cart', 2000)}, 0);
+            setTimeout(()=>{dispatchCalculateTotalPrice();displayNotification('Portrait added to the cart', 1000)}, 0);
         },
         removePortraitFromCart(state, action){
             const portraitID = action.payload;

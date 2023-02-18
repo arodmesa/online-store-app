@@ -10,6 +10,7 @@ import PortraitsPage from './websitePages/PortraitsPage';
 import PortraitDetailsPage from './websitePages/PortraitDetailsPage';
 import ErrorPage from './websitePages/ErrorPage';
 import NotificationBar from './features/notificationBar/NotificationBar';
+import BackgroundForNavBar from './features/backgroundForNavBar/BackgroundForNavBar';
 import { useSelector } from 'react-redux';
 const LazyHome= lazy(()=>import ('./websitePages/HomePage'));
 const LazyAbout= lazy(()=>import ('./websitePages/AboutPage'));
@@ -18,7 +19,6 @@ const LazyCart= lazy(()=>import ('./websitePages/CartPage'));
 // Arreglar el componente Error para q tenga una foto offline 
 // corregir q cuando no encuentre coincidencias ponga alguna foto the oops o similar
 // Arreglar q cuando pongan manualmente una pag en la url que sea mas grande q el numero de pag ponga oops o similar
-// Arreglar como se ve el Componente de % y el de Animation
 
 function App() {
   const [isHorizontalBarsVisible, setHorizontalBarsVisibility] = useState(true);
@@ -57,8 +57,9 @@ function App() {
               <div style={(areAllPortraitsLoaded)?{display:'block'}:{display:'none'}}>
                 <PortraitsPage /> 
               </div>
-              <div style={(areAllPortraitsLoaded)?{display:'none'}:{display:'block'}}>  
-                <div style={{ width: '25vw', height: '25vw' }}>
+              <div className='organizeCircularProgressBar' style={(areAllPortraitsLoaded)?{display:'none'}:{display:'flex'}}>  
+                <BackgroundForNavBar />
+                <div className='circularProgressBarDiv'>
                   <CircularProgressbar value={percentageOfLoadedPortraits} text={`${percentageOfLoadedPortraits}%`} />
                 </div>
               </div> 
@@ -72,8 +73,8 @@ function App() {
         <Route path='cart' element={
           <Suspense fallback={<Animation />}>
             <LazyCart />
-          </Suspense>          
-          }         
+          </Suspense>      
+        }         
         />
         <Route path='error' element={<ErrorPage />} />
         <Route path='*' element={<PageNotFound />} />

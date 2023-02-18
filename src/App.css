@@ -20,10 +20,26 @@
 .pixabayLink:visited{
   color: rgb(230, 32, 23);
 }
+.organizeCircularProgressBar{
+  height: 70vh;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15vh;
+}
+.circularProgressBarDiv{
+  height: 60vw;
+  width:  60vw;
+  max-height: 350px;
+  max-width:  350px;
+}
 
 @media (min-width: 551px){
   .pixabayDiv{
     font-size: 1.15em;
+  }
+  .organizeCircularProgressBar{
+    margin-top: 100px;
+    margin-bottom: 7vh;
   }
 }
 @media (min-width: 991px){

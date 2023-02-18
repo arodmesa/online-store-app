@@ -23,34 +23,31 @@ function CartPage(){
     }
     if (amountOfUniquePortraitsInCart){
         return(
-        <div className="div_cart">
-            <table className='tabla_cart'>
-                <tbody>
-                    <tr className='head_row'>
-                        <th className='th_head'>Item</th>
-                        <th className='th_head'>Price</th>
-                        <th className='th_head'>Quantity</th>
-                        <th className='th_head'>Subtotal</th>
-                    </tr>
+            <>
+                <BackgroundForNavBar />
+                <div className="divCart">
+                    <h1 className='cartPageTitle'>Your Cart</h1>
                     {cartTable}
-                </tbody>
-            </table>
-            <div className='org_btn'>
-                <button className='btn_home cart_btn' type='button' onClick={()=>navigate('/products/pageNum/1')}>Continue Shopping</button>
-                <button className='btn_home cart_btn' type='button' onClick={()=>dispatch(clearShoppingCart())} >Clear Shopping Cart</button>
-            </div>
-            <div className='div_pagar'>
-                <h1>{`Order total: $${totalPrice}`}</h1>
-                <button className='btn_home payBtn' onClick={pay}>Pay</button>
-            </div>
-        </div>
+                    <div className='divRow organizeCartBtn'>
+                        <button className='btnCart' type='button' onClick={()=>navigate('/products/pageNum/1')}>Continue Shopping</button>
+                        <button className='btnCart' type='button' onClick={()=>dispatch(clearShoppingCart())} >Clear Shopping Cart</button>
+                    </div>
+                    <div className='organizePaymentSection'>
+                        <h1 className='total'>{`Total: $${totalPrice}`}</h1>
+                        <button className='payBtn' onClick={pay}>Pay</button>
+                    </div>
+                </div>
+            </>        
         )
     }
     return(
-        <div className="div_cart_empty">
-            <img className='empty_cart_img' src='https://www.valeorx.com/static/media/empty-cart.60e68bfd.png' alt='cart empty'></img>
-            <button className='btn_home fill' type='button' onClick={()=>navigate('/products/pageNum/1')}>Fill it</button>
-        </div>
+        <>
+            <BackgroundForNavBar />
+            <div className="divCartEmpty"></div>
+            <div className='divFillBtn'>
+                <button className='btnCart fillItBtn' type='button' onClick={()=>navigate('/products/pageNum/1')}>Fill it</button>
+            </div>
+        </>
     );
 }
 export default CartPage;

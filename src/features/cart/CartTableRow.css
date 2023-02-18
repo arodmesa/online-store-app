@@ -1,33 +1,136 @@
-.org_imgCart, .h4_dinero{
-    font-size: calc(0.65em + 0.5vw);
-    font-weight: bolder;
+.cartElementDiv{
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    position: relative;
+    justify-content: space-between;
+    max-width: 400px;
 }
-.cant{
-    margin-left: 15px;
-    margin-right: 15px;
+.divColumn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.organizeComponents{
+    display: flex;
+    flex-direction: column;
+    height: 175px;
+    margin-right: 7px;
+}
+.detailsDivision{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;    
+    font-size: calc(1.5vw + 0.65em);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    row-gap: 15px;    
+}
+.imageCart{
+    width: 50vw;
+    max-width: 200px;
+    border-radius: 10px;
+}
+.organizeAmount{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 10px;
+    left: 2vw;
+    margin-left: 5vw;
+    column-gap: 15px;
+}
+.signsCart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1em;
+    background-color: skyblue;
+    height: 30px;
+    width:  30px;
+    border-radius: 50%;
+}
+.amount{
+    font-size: 2.2em;
+    margin: 0;
+}
+.organizeImageSection{
+    margin-left: 10px;
+    padding-bottom: 70px;
+}
+.price{
+    font-size: 1.2em;  
 }
 .fa-trash-o{
-    font-size: larger;
+    font-size: 1.4em;
     font-weight: bolder;
 }
-.fa-trash-o:hover{
-    cursor: pointer;
-    color: red;
-    font-size: x-large;
+.subtotal{
+    background-color: skyblue;
+    padding: 7px;
+    border-radius: 10px;
 }
-.img_cart{
-    border-radius: 15px;
-    min-width: 10vw;
+.divisionLine{
+    width: 70vw;
+    background-color: silver;
+    height: 2px;
+    border: none;
+    margin-top: -15px;
+}
+.detailsText{
+    margin: 0;
 }
 
-@media (max-width:850px){
-    .cant{
-        margin-left: 5px;
-        margin-right: 5px;
-    }    
+@media (min-width: 551px){
+    .cartElementDiv{
+        width: 95vw;
+        max-width: 550px;
+    }
+    .organizeImageSection{
+        padding-bottom: 0;
+    }
+    .detailsDivision{
+        flex-direction: row;
+        flex-wrap: wrap;
+        column-gap: 15px;
+        font-size: 1.1em;
+    }
+    .price{
+        font-size: 1.2em;
+    }
+    .organizeAmount{
+        position: static;
+        margin-left: 0;
+    }
+    .organizeComponents{
+        row-gap: 30px;
+    }
 }
-@media (max-width:400px){
-    .img_cart{
-        max-width: 22vw;
+@media (min-width: 901px){
+    .divisionLine{
+        width: 50vw;
+    }
+    .signsCart{
+        font-size: 1.4em;
+        text-align: center;
+        padding-top: 1px;
+    }
+    .amount{
+        font-size: 2.2em;
+    }
+    .fa-trash-o{
+        font-size: 1.5em
+    }
+    .imageCart{
+        cursor: pointer;
+    }
+    .signsCart{
+        cursor: pointer;
+    }
+    .fa-trash-o:hover{
+        cursor: pointer;
     }
 }

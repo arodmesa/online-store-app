@@ -34,7 +34,7 @@ function resetSearchFilters(shouldResetPage){
     store.dispatch(changeSearchInputText(''));
     if (shouldResetPage){
       resetLoadedPortraitsProcess();
-      store.dispatch(changeCurrentPageNumber(1))
+      store.dispatch(changeCurrentPageNumber(0))
     }
 }  
 function navigateToPageOne(navigate, currentPage){

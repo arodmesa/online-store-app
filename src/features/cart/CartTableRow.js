@@ -1,4 +1,3 @@
-import '../../websitePages/PortraitDetailsPage.css';
 import './CartTableRow.css';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -9,30 +8,25 @@ function CartTableRow({portraitID, price, image, name, amount, subtotal}){
     const navigate = useNavigate();
     return(
         <>
-            <tr>
-                <th>
-                    <div className='org_imgCart'>
-                        <img className='img_cart' src={image} alt='product' onClick={()=>{navigate(`/product/ID/${portraitID}`)}}></img>
-                        <h4 className='h4_cart'>{name}</h4>
+            <div className='cartElementDiv'>
+                <div className='divColumn organizeImageSection'>
+                    <img className='imageCart' src={image} alt='product' onClick={()=>{navigate(`/product/ID/${portraitID}`)}}></img>              
+                </div>
+                <div className='organizeComponents'>
+                    <div className='detailsDivision'>
+                        <h4 className='detailsText imageTags'>{name}</h4>
+                        <h4 className='detailsText price'> {`$${price}`}</h4>
+                        <h4 className='detailsText subtotal'>{`subtotal: $${subtotal}`}</h4>
                     </div>
-                </th>
-                <th>
-                    <h4 className='h4_dinero'> {`$${price}`}</h4>                   
-                </th>
-                <th>
-                    <div className='cantProd'>
-                    <h3 className='h3_cant h3_details'> 
-                        <i className="fa fa-minus signo cant" onClick={()=>dispatch(decrementAmountOfOnePortraitInCart(portraitID))}></i>
-                        {amount}
-                        <i className="fa fa-plus signo cant" onClick={()=>dispatch(incrementAmountOfOnePortraitInCart(portraitID))} ></i>
-                    </h3>
-                    </div>
-                </th>
-                <th>
-                    <h4 className='h4_dinero'>{`$${subtotal}`}</h4>
-                </th>
-                <th><i className="fa fa-trash-o" onClick={()=>dispatch(removePortraitFromCart(portraitID))}></i></th>
-            </tr>
+                    <div className='organizeAmount'>
+                        <i className="fa fa-minus signo signsCart" onClick={()=>dispatch(decrementAmountOfOnePortraitInCart(portraitID))}></i>
+                        <h4 className='amount'>{amount}</h4>
+                        <i className="fa fa-plus signo signsCart" onClick={()=>dispatch(incrementAmountOfOnePortraitInCart(portraitID))} ></i>
+                        <i className="fa fa-trash-o" onClick={()=>dispatch(removePortraitFromCart(portraitID))}></i>
+                    </div>  
+                </div>
+            </div>    
+            <hr className='divisionLine'></hr>
         </>
     );
 }

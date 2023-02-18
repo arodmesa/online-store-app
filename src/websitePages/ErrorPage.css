@@ -1,0 +1,57 @@
+.errorDiv{
+    height: 50vh;
+    min-height: 350px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20vh;
+}
+.errorImageDiv{
+    background-image: url('../errorMobile.webp');
+    background-position: center;
+    width: 325px;
+    height: 264px;
+}
+.paddingError{
+    height: 75px;
+}
+.goHomeBtn{
+    margin-top: 20px;
+    border-color: black;
+    border-width: 2px;
+    border-radius: 10px;
+    height: 40px;
+    width: 130px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.15em;
+    letter-spacing: 1px;
+    color: white;
+    background: #0F2027;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+@media (min-width: 551px){
+    .errorDiv{
+        height: 70vh;
+        min-height: 650px;
+        margin-bottom: 0;
+    }
+    .errorImageDiv{
+        background-image: url('../error.webp');
+        height: 500px;
+        width: 620px;
+    }
+}
+@media (min-width: 901px){
+    .errorDiv{
+        justify-content: flex-start;
+    }
+    .goHomeBtn{
+        font-size: 1.3em;
+    }
+    .goHomeBtn:hover{
+        cursor: pointer;
+    }   
+}

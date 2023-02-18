@@ -1,13 +1,18 @@
-import './PageNotFound.css';
+import './ErrorPage.css';
+import BackgroundForNavBar from '../features/backgroundForNavBar/BackgroundForNavBar';
 import {useNavigate} from 'react-router-dom';
 
 function ErrorPage(){
     const navigate=useNavigate();
     return(
-        <div className="div_notFound">
-            <img className='img_notFound' src='https://img.freepik.com/foto-gratis/persona-3d-senal-trafico-error-sobre-fondo-blanco_476612-6101.jpg' alt='Error'></img>
-            <button type='button' className='btn_home' onClick={()=>navigate('/', {replace:true})}>Go back Home</button>
-        </div>        
+        <>
+            <BackgroundForNavBar />
+            <div className="errorDiv">
+                <div className='errorImageDiv'></div>
+                <div className='paddingError'></div>
+                <button type='button' className='goHomeBtn' onClick={()=>navigate('/', {replace:true})}>Go back</button>
+            </div>  
+        </>      
     );
 }
 export default ErrorPage;

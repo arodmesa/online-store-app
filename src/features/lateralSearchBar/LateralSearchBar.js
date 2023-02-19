@@ -50,7 +50,7 @@ function LateralSearchBar(){
         }        
     }
     const lateralBar = 
-        <div className='divSearchBar divColumn'>
+        <div className='divSearchBar divColumnLateralBar'>
             <div className='organizeSearchInput divRow'>
                 <input type='text' className='searchInput' placeholder='Type your keyword here' value={searchInputText} onChange={(event)=>dispatch(changeSearchInputText(event.target.value))} 
                     onKeyDown={(event)=>{
@@ -59,13 +59,13 @@ function LateralSearchBar(){
                 </input>
                 <i className='fa fa-search' onClick={()=>{handleSearchButtonClick(params.page); minimizeLateralBar(true)}}></i>
             </div>
-            <div className='divCategories divColumn'>
+            <div className='divCategories divColumnLateralBar'>
                 <h3 className='lateralBarHeaders'>Categories</h3>
                 <div className='organizeCategories'>
                     {arrayOfCategoryBtnComponents}
                 </div>                
             </div>
-            <div className='divColors divColumn'>
+            <div className='divColors divColumnLateralBar'>
                 <h3 className='lateralBarHeaders'>Colors</h3>
                 <div className='organizeColors'>
                     <h4 className={(activeColor === 'all')?'h4_category checked':'h4_category'} 

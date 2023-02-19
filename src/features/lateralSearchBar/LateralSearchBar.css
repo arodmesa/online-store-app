@@ -50,7 +50,7 @@
     right: 10px; 
 }
 .divSearchBar{    
-    margin-top: 20vh;
+    margin-top: 40vh;
     row-gap: 20px;
 }
 .divRow{
@@ -77,7 +77,7 @@
 .fa-search{
     font-size: 1em;
 }
-.divColumn{
+.divColumnLateralBar{
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -1,12 +1,17 @@
 import './PageNotFound.css';
+import BackgroundForNavBar from '../features/backgroundForNavBar/BackgroundForNavBar';
 import {useNavigate} from 'react-router-dom';
 function PageNotFound(){
     const navigate=useNavigate();
     return(
-        <div className="div_notFound">
-            <img className='img_notFound' src='https://www.seekahost.com/wp-content/uploads/2017/11/404-page-not-found.jpg' alt='not found'></img>
-            <button type='button' className='btn_home' onClick={()=>navigate('/', {replace:true})}>Go back Home</button>
-        </div>        
+        <>
+            <BackgroundForNavBar />
+            <div className="notFoundDiv">
+                <div className='notFoundImageDiv'></div>
+                <div className='paddingNotFound'></div>
+                <button type='button' className='goHomeBtn' onClick={()=>navigate('/', {replace:true})}>Go back</button>
+            </div>  
+        </>   
     );
 }
 export default PageNotFound;

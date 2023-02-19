@@ -1,6 +1,6 @@
 import './App.css';
 import {Routes, Route} from 'react-router-dom';
-import { lazy, Suspense, useState} from 'react';
+import { lazy, Suspense} from 'react';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import NavBar from './features/navBar/NavBar';
@@ -11,29 +11,28 @@ import PortraitDetailsPage from './websitePages/PortraitDetailsPage';
 import ErrorPage from './websitePages/ErrorPage';
 import NotificationBar from './features/notificationBar/NotificationBar';
 import BackgroundForNavBar from './features/backgroundForNavBar/BackgroundForNavBar';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { changeHorizontalBarsIconVisibility } from './features/navBar/horizontalBarsIconVisibilitySlice';
 const LazyHome= lazy(()=>import ('./websitePages/HomePage'));
 const LazyAbout= lazy(()=>import ('./websitePages/AboutPage'));
 const LazyCart= lazy(()=>import ('./websitePages/CartPage'));
 
 function App() {
-  const [isHorizontalBarsVisible, setHorizontalBarsVisibility] = useState(true);
+  const dispatch = useDispatch();
+  const isHorizontalBarsIconVisible = useSelector((state)=>state.horizontalBarsIconVisibilityReducer.isHorizontalBarsIconVisible);
   const areAllPortraitsLoaded = useSelector((state)=>state.areAllPortraitsLoadedReducer.areLoaded);
   const percentageOfLoadedPortraits = useSelector((state)=>state.percentageOfLoadedPortraitsReducer.percentage);
   
   function focusOutsideNavBar(){
-    if (!isHorizontalBarsVisible){
-      setHorizontalBarsVisibility(true);
+    if (!isHorizontalBarsIconVisible){
+      dispatch(changeHorizontalBarsIconVisibility(true))
     }
-  }
-  function desactivateHorizontalBarsVisibility(){
-    setHorizontalBarsVisibility(false);
   }
 
   return (
     <div className="App" onClick={focusOutsideNavBar}>
       <NotificationBar />
-      <NavBar isHorizontalBarsVisible={isHorizontalBarsVisible} desactivateHorizontalBarsVisibility={desactivateHorizontalBarsVisibility} />
+      <NavBar />
       <Routes>
         <Route path='/' element={
           <Suspense fallback={<Animation />}>

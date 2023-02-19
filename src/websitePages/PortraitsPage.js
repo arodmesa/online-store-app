@@ -10,6 +10,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getData } from '../commonFunctions';
 import { changePageURL } from '../features/urlFetch/urlPartsSlice';
 
+// fix navBar for mobiles and tablet
+// arreglar las botones de paginas para que se pueda hacer lo mismo deslizando el dedo en moviles y tablets
+
 function PortraitsPage(){
     const params= useParams();
     const navigate = useNavigate();

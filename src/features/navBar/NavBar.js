@@ -1,12 +1,19 @@
 import './NavBar.css';
 import {NavLink, Outlet, useNavigate} from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { resetSearchFilters } from '../../commonFunctions';
 import { useState } from 'react';
-function NavBar({isHorizontalBarsVisible, desactivateHorizontalBarsVisibility}){
+import { changeHorizontalBarsIconVisibility } from './horizontalBarsIconVisibilitySlice';
+
+function NavBar(){
+    const dispatch = useDispatch();
+    const isHorizontalBarsIconVisible = useSelector((state)=>state.horizontalBarsIconVisibilityReducer.isHorizontalBarsIconVisible);
     const amountOfUniquePortraitsInCart = useSelector((state)=>state.amountOfUniquePortraitsInCartReducer.amountOfUniquePortraitsInCart)
     const matchMedia = window.matchMedia( '(max-width: 550px)' );  
     const navigate = useNavigate();
+    function desactivateHorizontalBarsVisibility(){
+        dispatch(changeHorizontalBarsIconVisibility(false));
+    }
     matchMedia.onchange = (event)=>{
         if(event.matches !== isMobileDevice){
         setIsMobileDevice(!isMobileDevice);
@@ -23,15 +30,18 @@ function NavBar({isHorizontalBarsVisible, desactivateHorizontalBarsVisibility}){
                                 </NavLink>
                                 <NavLink className='navlink' to='/' onClick={()=>resetSearchFilters(true)} ><i className='fa fa-sign-in'></i></NavLink>
                             </div>
+    const classNavBarDeployed = (!isHorizontalBarsIconVisible && isMobileDevice)?' deployed':'';
     let contentToRender;
     if (isMobileDevice){
-        contentToRender = ((isHorizontalBarsVisible)?<i className="fa fa-bars" onClick={(event)=>{event.preventDefault(); desactivateHorizontalBarsVisibility()}}></i>:navigationLinks);
+        contentToRender = ((isHorizontalBarsIconVisible)?
+                          <i className="fa fa-bars" onClick={(event)=>{event.preventDefault(); desactivateHorizontalBarsVisibility()}}></i>
+                          :navigationLinks);
     }else{
         contentToRender = navigationLinks;
     }
     return(
         <>
-            <nav className='mainNav'>
+            <nav className={'mainNav' + classNavBarDeployed}>
                 <img className='logoNav' src={process.env.PUBLIC_URL + '/nav_logo.png'} alt='company logo' onClick={()=>navigate('/')}></img>
                 {contentToRender}         
             </nav>

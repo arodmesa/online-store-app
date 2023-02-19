@@ -19,6 +19,7 @@ import amountOfUniquePortraitsInCartReducer from '../features/cart/amountOfUniqu
 import totalPriceOfPurchaseReducer from '../features/cart/totalPriceOfPurchaseSlice';
 import homePagePortraitDataReducer from '../features/portraits/homePagePortraitDataSlice';
 import notificationTextReducer from '../features/notificationBar/notificationTextSlice';
+import horizontalBarsIconVisibilityReducer from '../features/navBar/horizontalBarsIconVisibilitySlice';
 
 const store = configureStore({
     reducer: {
@@ -41,7 +42,8 @@ const store = configureStore({
         amountOfUniquePortraitsInCartReducer,
         totalPriceOfPurchaseReducer,
         homePagePortraitDataReducer,
-        notificationTextReducer
+        notificationTextReducer,
+        horizontalBarsIconVisibilityReducer,
     }
 })
 

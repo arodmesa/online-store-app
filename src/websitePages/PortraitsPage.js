@@ -21,9 +21,13 @@ function PortraitsPage(){
     const [startingPageNumberBtn, setStartingPageNumberBtn] = useState(Math.floor(Number(params.page)/5 - 0.001) * 5 + 1);
     useEffect(()=>{
         if (Number(params.page)!==currentPageNumber){
-            dispatch(changePageURL(params.page));
-            getData(navigate, params.page);
-            calculateStartingPageNumberBtn(params.page);
+            if (amountOfResultsPages < Number(params.page) || Number(params.page) <= 0){
+                navigate('/pageNotFound');
+            }else{
+                dispatch(changePageURL(params.page));
+                getData(navigate, params.page);
+                calculateStartingPageNumberBtn(params.page);
+            }            
         }        
     })
     const arrayOfPortraitComponents = portraitsData.map((portraitData, index)=>{

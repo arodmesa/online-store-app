@@ -81,7 +81,7 @@
         max-width: 900px;
         height: 100vh;
         max-height: 600px;
-        background-image: url('../noResultsTablet.webp');
+        background-image: url('../noResultsFullSize.webp');
         background-repeat: no-repeat;
     }
     .organizeResultsDiv{

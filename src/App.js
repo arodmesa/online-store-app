@@ -16,7 +16,6 @@ const LazyHome= lazy(()=>import ('./websitePages/HomePage'));
 const LazyAbout= lazy(()=>import ('./websitePages/AboutPage'));
 const LazyCart= lazy(()=>import ('./websitePages/CartPage'));
 
-// corregir q cuando no encuentre coincidencias ponga alguna foto the oops o similar
 // Arreglar q cuando pongan manualmente una pag en la url que sea mas grande q el numero de pag ponga oops o similar
 // Chequear la visualizacion del sitio cuando se vira de forma horizontal el telefono o tablet principalmente en lo que respecta
 // a las background-image porque al poner el height relacionado con el vh puede dar problema. Ver forma de resolverlo en el ErrorPage Component

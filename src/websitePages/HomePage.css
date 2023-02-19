@@ -189,7 +189,11 @@
     color: rgba(255, 255, 255, 0.85);
     letter-spacing: 2px;
 }
-
+@media (max-width: 310px){
+    .section1Text{
+        margin-left: 140px;
+    }
+}
 @media (min-width: 551px){
     .section1{
         background-image: url('../frontPicture-tablet.webp');

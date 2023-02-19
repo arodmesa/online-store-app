@@ -52,22 +52,26 @@ function PortraitsPage(){
             setStartingPageNumberBtn((oldStartingPage)=>oldStartingPage + 5)
         }
     }
+    const resultsHtmlToDisplay =<div className="organizeResultsDiv divColumn">
+                                    <h4 className="amountOfResults">{`${amountOfPortraitsFinded} Portraits Found`}</h4>
+                                    <div className='organizePortraits'>
+                                        {arrayOfPortraitComponents}
+                                    </div>                
+                                    <div className="organizePageButtons">
+                                        <i className="fa fa-chevron-circle-left" onClick={decrementStartingPageNumberBtn}></i>
+                                        {arrayOfPageComponents}
+                                        <i className="fa fa-chevron-circle-right" onClick={incrementStartingPageNumberBtn}></i>
+                                    </div>                
+                                </div>
+    const noResultsFindedHtml = <div className='noResultsFinded'>
+                                    <div className='noResultsFindedImg'></div>
+                                </div>
     return(
         <>
             <BackgroundForNavBar />
-            <div className='divPortraitsPage'>  
+            <div className={'divPortraitsPage' + ((amountOfPortraitsFinded === 0)?' noPortraits':'')}>  
                 <LateralSearchBar />          
-                <div className="organizeResultsDiv divColumn">
-                    <h4 className="amountOfResults">{`${amountOfPortraitsFinded} Portraits Found`}</h4>
-                    <div className='organizePortraits'>
-                        {arrayOfPortraitComponents}
-                    </div>                
-                    <div className="organizePageButtons">
-                        <i className="fa fa-chevron-circle-left" onClick={decrementStartingPageNumberBtn}></i>
-                        {arrayOfPageComponents}
-                        <i className="fa fa-chevron-circle-right" onClick={incrementStartingPageNumberBtn}></i>
-                    </div>                
-                </div>
+                {(amountOfPortraitsFinded > 0) ? resultsHtmlToDisplay : noResultsFindedHtml}
             </div>
         </>        
     );

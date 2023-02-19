@@ -161,6 +161,7 @@
         background-color: unset;
         width: 300px;
         margin-top: 180px;
+        animation-name: none;
     }
     .divSearchBar{
         width: 30vw;

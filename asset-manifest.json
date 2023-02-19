@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/online-store-app/static/css/main.2c242794.css",
-    "main.js": "/online-store-app/static/js/main.c8be7b9c.js",
+    "main.css": "/online-store-app/static/css/main.81b8f826.css",
+    "main.js": "/online-store-app/static/js/main.2e97f9d6.js",
     "static/css/139.e306ed18.chunk.css": "/online-store-app/static/css/139.e306ed18.chunk.css",
     "static/js/139.ead85ec0.chunk.js": "/online-store-app/static/js/139.ead85ec0.chunk.js",
     "static/css/742.7506b325.chunk.css": "/online-store-app/static/css/742.7506b325.chunk.css",
@@ -10,16 +10,19 @@
     "static/js/993.967b291b.chunk.js": "/online-store-app/static/js/993.967b291b.chunk.js",
     "static/js/787.28cb0dcd.chunk.js": "/online-store-app/static/js/787.28cb0dcd.chunk.js",
     "static/media/frontPicture-fullSize.webp": "/online-store-app/static/media/frontPicture-fullSize.6a3ba765dbd0cee675e8.webp",
+    "static/media/noResultsFullSize.webp": "/online-store-app/static/media/noResultsFullSize.51da76372e29a940fe78.webp",
     "static/media/frontPicture-tablet.webp": "/online-store-app/static/media/frontPicture-tablet.b0027f94cad0be410302.webp",
     "static/media/error.webp": "/online-store-app/static/media/error.428fc3c7665109052269.webp",
     "static/media/frontPicture-mobile.webp": "/online-store-app/static/media/frontPicture-mobile.08b133868b843566c653.webp",
+    "static/media/noResultsTablet.png": "/online-store-app/static/media/noResultsTablet.98bc826327ced82ba54b.png",
     "static/media/emptyCart.png": "/online-store-app/static/media/emptyCart.02977f1f08f239f183de.png",
+    "static/media/noResultsFindedMobile.png": "/online-store-app/static/media/noResultsFindedMobile.ddfc8926cd014d00a562.png",
     "static/media/pageNotFound.webp": "/online-store-app/static/media/pageNotFound.41b623173a3d8b20f0c1.webp",
     "static/media/pageNotFoundMobile.webp": "/online-store-app/static/media/pageNotFoundMobile.b20beb05d8d5e48cec81.webp",
     "static/media/errorMobile.webp": "/online-store-app/static/media/errorMobile.0bd39a184ab9a00c179f.webp",
     "index.html": "/online-store-app/index.html",
-    "main.2c242794.css.map": "/online-store-app/static/css/main.2c242794.css.map",
-    "main.c8be7b9c.js.map": "/online-store-app/static/js/main.c8be7b9c.js.map",
+    "main.81b8f826.css.map": "/online-store-app/static/css/main.81b8f826.css.map",
+    "main.2e97f9d6.js.map": "/online-store-app/static/js/main.2e97f9d6.js.map",
     "139.e306ed18.chunk.css.map": "/online-store-app/static/css/139.e306ed18.chunk.css.map",
     "139.ead85ec0.chunk.js.map": "/online-store-app/static/js/139.ead85ec0.chunk.js.map",
     "742.7506b325.chunk.css.map": "/online-store-app/static/css/742.7506b325.chunk.css.map",
@@ -29,7 +32,7 @@
     "787.28cb0dcd.chunk.js.map": "/online-store-app/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2c242794.css",
-    "static/js/main.c8be7b9c.js"
+    "static/css/main.81b8f826.css",
+    "static/js/main.2e97f9d6.js"
   ]
 }

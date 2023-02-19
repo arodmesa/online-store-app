@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/online-store-app/static/css/main.81b8f826.css",
-    "main.js": "/online-store-app/static/js/main.2e97f9d6.js",
+    "main.js": "/online-store-app/static/js/main.9a4c383a.js",
     "static/css/139.e306ed18.chunk.css": "/online-store-app/static/css/139.e306ed18.chunk.css",
     "static/js/139.ead85ec0.chunk.js": "/online-store-app/static/js/139.ead85ec0.chunk.js",
     "static/css/742.7506b325.chunk.css": "/online-store-app/static/css/742.7506b325.chunk.css",
@@ -22,7 +22,7 @@
     "static/media/errorMobile.webp": "/online-store-app/static/media/errorMobile.0bd39a184ab9a00c179f.webp",
     "index.html": "/online-store-app/index.html",
     "main.81b8f826.css.map": "/online-store-app/static/css/main.81b8f826.css.map",
-    "main.2e97f9d6.js.map": "/online-store-app/static/js/main.2e97f9d6.js.map",
+    "main.9a4c383a.js.map": "/online-store-app/static/js/main.9a4c383a.js.map",
     "139.e306ed18.chunk.css.map": "/online-store-app/static/css/139.e306ed18.chunk.css.map",
     "139.ead85ec0.chunk.js.map": "/online-store-app/static/js/139.ead85ec0.chunk.js.map",
     "742.7506b325.chunk.css.map": "/online-store-app/static/css/742.7506b325.chunk.css.map",
@@ -33,6 +33,6 @@
   },
   "entrypoints": [
     "static/css/main.81b8f826.css",
-    "static/js/main.2e97f9d6.js"
+    "static/js/main.9a4c383a.js"
   ]
 }

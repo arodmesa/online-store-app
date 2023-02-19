@@ -51,7 +51,7 @@ function LateralSearchBar(){
     }
     const lateralBar = 
         <div className='divSearchBar divColumnLateralBar'>
-            <div className='organizeSearchInput divRow'>
+            <div className='organizeSearchInput divRowLateralBar'>
                 <input type='text' className='searchInput' placeholder='Type your keyword here' value={searchInputText} onChange={(event)=>dispatch(changeSearchInputText(event.target.value))} 
                     onKeyDown={(event)=>{
                         if(event.key==='Enter'){handleSearchButtonClick(params.page); minimizeLateralBar(true)}

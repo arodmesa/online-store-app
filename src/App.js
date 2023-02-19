@@ -17,6 +17,7 @@ const LazyHome= lazy(()=>import ('./websitePages/HomePage'));
 const LazyAbout= lazy(()=>import ('./websitePages/AboutPage'));
 const LazyCart= lazy(()=>import ('./websitePages/CartPage'));
 
+// hacer que en la vista movil y tablet cuando se deslice con el dedo se muevan las pag 1-5 -> 6-10 etc
 function App() {
   const dispatch = useDispatch();
   const isHorizontalBarsIconVisible = useSelector((state)=>state.horizontalBarsIconVisibilityReducer.isHorizontalBarsIconVisible);

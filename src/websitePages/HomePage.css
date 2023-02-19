@@ -112,7 +112,7 @@
     color: white;
     letter-spacing: 1px;
     top: unset;
-    bottom: 20px;
+    bottom: 15px;
 }
 .section3{
     margin-top: 40px;
@@ -219,7 +219,6 @@
     .section2Btn{
         height: auto;   
         top: unset;
-        bottom: 20px;
     }
     .section3{
         min-width: none;
@@ -282,8 +281,8 @@
     .section2Btn{
         height: auto;   
         top: unset;
-        bottom: 20px;
         animation-name: growSection2BtnFullSize;
+        bottom: 12px;
     }
     .section3{
         align-items: center;

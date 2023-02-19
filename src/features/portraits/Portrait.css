@@ -11,11 +11,18 @@
 }
 .organizePortraitTags{
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    column-gap: 12px;
+    align-items: center;
+    row-gap: 12px;
     font-family: 'Times New Roman', Times, serif;
     font-size: 1.05em;
     max-width: 90vw;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+.organizePortraitTags > h4{
+    margin: 0;
 }
 
 @media (min-width: 551px){

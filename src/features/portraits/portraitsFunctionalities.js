@@ -9,7 +9,7 @@ function controlPortraitsLoadingProcess(){
     if (amountOfLoadedPortraits + 1 === totalAmountOfProductsToLoad){
       store.dispatch(changeAreAllPortraitsLoaded(true));
     }
-    store.dispatch(changePercentageOfLoadedPortraits(Math.floor(100*(amountOfLoadedPortraits+1)/totalAmountOfProductsToLoad)))
+    store.dispatch(changePercentageOfLoadedPortraits(Math.floor(100*(amountOfLoadedPortraits + 1)/totalAmountOfProductsToLoad)))
     store.dispatch(changeAmountOfLoadedPortraits(amountOfLoadedPortraits + 1));
 }
 

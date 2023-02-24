@@ -1,8 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-const beginingUrlPartCategory = '&category='; 
-const beginingUrlPartColor = '&colors='; 
-const beginingUrlPartSearchText = '&q=';
-const beginingUrlPartPage = '&page='
+import { beginingUrlPartCategory, beginingUrlPartColor, beginingUrlPartSearchText, beginingUrlPartPage } from "../../constants";
 
 const urlPartsSlice = createSlice({
     name:'apiUrlParts',

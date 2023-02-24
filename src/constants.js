@@ -18,5 +18,10 @@ const cardsData=[
         textCard: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit autem unde numquam nisi'
       }
 ];
+const beginingUrlPartCategory = '&category='; 
+const beginingUrlPartColor = '&colors='; 
+const beginingUrlPartSearchText = '&q=';
+const beginingUrlPartPage = '&page='
 const frontPagePortraitsIDs = [7754678, 7718952, 7760128]
-export {categories, colors, apiURL, cardsData, frontPagePortraitsIDs};
+export {categories, colors, apiURL, cardsData, frontPagePortraitsIDs, 
+        beginingUrlPartCategory, beginingUrlPartColor, beginingUrlPartSearchText, beginingUrlPartPage};

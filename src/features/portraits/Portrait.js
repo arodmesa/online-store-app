@@ -8,7 +8,7 @@ function Portrait({portraitID, price, tags, imagePreview, isResultsPage}){
     return(
         <div className="divPortrait">
             <img className={'imgPreview'+classImgResultsPage} src={imagePreview} alt='product' onLoad={controlPortraitsLoadingProcess} onClick={()=>{navigate(`/product/ID/${portraitID}`)}}></img>            
-            <div className={'organizePortraitTags'+classTagsResultsPage}>
+            <div title='divContainerText' className={'organizePortraitTags'+classTagsResultsPage}>
                 <h4 className='portraitTags'>{tags}</h4>
                 <h4 className='portraitPrice'>{`$${price}`}</h4>
             </div>

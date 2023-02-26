@@ -2,16 +2,13 @@ import store from "../../app/store";
 import { changeAmountOfLoadedPortraits } from "./amountOfLoadedPortraitsSlice";
 import { changePortraitsData } from "./portraitsDataSlice";
 import { controlPortraitsLoadingProcess } from "./portraitsFunctionalities";
-import { changeAreAllPortraitsLoaded } from "./areAllPortraitsLoadedSlice";
 
-const fakeFetchedData = [{pic1: 'pic1'}, {pic2: 'pic2'}, {pic3: 'pic3'}] ;
-
+const fakeFetchedData = [{pic1: 'pic1'}, {pic2: 'pic2'}, {pic3: 'pic3'}];
 describe("testing all types of scenarios for the function", ()=>{
     let areAllPortraitsLoaded, percentageOfLoadedPortraits, amountOfLoadedPortraits;
     let amountOfLoadedPortraitsForTest;
     function initializeScenarios(newAmount){
         amountOfLoadedPortraitsForTest = newAmount;
-        //store.dispatch(changeAreAllPortraitsLoaded(false));
         store.dispatch(changeAmountOfLoadedPortraits(amountOfLoadedPortraitsForTest));
         store.dispatch(changePortraitsData(fakeFetchedData));
         controlPortraitsLoadingProcess();

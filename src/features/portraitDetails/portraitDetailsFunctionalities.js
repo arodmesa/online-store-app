@@ -5,8 +5,8 @@ import { changePortraitDetails } from "./portraitDetailsSlice";
 
 async function fetchAndChangePortraitDetails(navigate, portraitID){  
   try{
-        const portraitData = await fetchData(apiURL+`&id=${portraitID}`);
-        store.dispatch(changePortraitDetails(portraitData.hits[0]));
+      const portraitData = await fetchData(apiURL+`&id=${portraitID}`);
+      store.dispatch(changePortraitDetails(portraitData.hits[0]));
     }catch{
       navigate('PageNotFound');
     }    

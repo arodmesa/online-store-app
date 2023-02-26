@@ -4,7 +4,6 @@ jest.mock('react-router-dom', () => ({
 ...jest.requireActual('react-router-dom'),
 useNavigate: () => mockedUsedNavigate,
 }));
-// eslint-disable-next-line import/first
 import {render, screen, fireEvent} from '@testing-library/react';
 import Portrait from './Portrait';
 function setUpComponent (portraitID, price, tags, imagePreview, isResultsPage){

@@ -9,7 +9,7 @@ function Page({pageNumber, startingPageNumberBtn}){
     const displayClass = (pageNumber > endingVisiblePageNumber || pageNumber < startingPageNumberBtn)?' noDisplay':'';
     const activeClass = (pageNumber === currentPage)?' pageActive':'';
     return(
-        <div className={"pageDiv" + displayClass + activeClass} onClick={()=>{if(currentPage!==pageNumber){handlePageButtonCliked(navigate, pageNumber)}}}>
+        <div title='pageDiv' className={"pageDiv" + displayClass + activeClass} onClick={()=>{if(currentPage!==pageNumber){handlePageButtonCliked(navigate, pageNumber)}}}>
             <h4 className="pageNumber" >{pageNumber}</h4>
         </div>
     );    

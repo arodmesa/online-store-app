@@ -20,29 +20,29 @@ function NavBar(){
         }
     }
     const [isMobileDevice, setIsMobileDevice] = useState(matchMedia.matches);
-    const navigationLinks =<div className='divNav'>
+    const navigationLinks =<div title='divNav' className='divNav'>
                                 <NavLink className='navlink' to='/' onClick={()=>resetSearchFilters(true)}>Home</NavLink>            
                                 <NavLink className='navlink' to='products/pageNum/1'>Portraits</NavLink>
                                 <NavLink className='navlink' to='/about' onClick={()=>resetSearchFilters(true)}>About</NavLink>
-                                <NavLink className='navlink cartLink' to='/cart' onClick={()=>resetSearchFilters(true)} >
+                                <NavLink title='cartNavLink' className='navlink cartLink' to='/cart' onClick={()=>resetSearchFilters(true)} >
                                     <h6 className='floatingNumber'>{amountOfUniquePortraitsInCart}</h6>
-                                    <i className={'fa fa-shopping-cart'+((amountOfUniquePortraitsInCart > 0)?' red_cart':'')}></i>
+                                    <i className='fa fa-shopping-cart'></i>
                                 </NavLink>
-                                <NavLink className='navlink' to='/' onClick={()=>resetSearchFilters(true)} ><i className='fa fa-sign-in'></i></NavLink>
+                                <NavLink title='signInIcon' className='navlink' to='/' onClick={()=>resetSearchFilters(true)} ><i className='fa fa-sign-in'></i></NavLink>
                             </div>
     const classNavBarDeployed = (!isHorizontalBarsIconVisible && isMobileDevice)?' deployed':'';
     let contentToRender;
     if (isMobileDevice){
         contentToRender = ((isHorizontalBarsIconVisible)?
-                          <i className="fa fa-bars" onClick={(event)=>{event.preventDefault(); desactivateHorizontalBarsVisibility()}}></i>
+                          <i title='fa-bars' className="fa fa-bars" onClick={(event)=>{event.preventDefault(); desactivateHorizontalBarsVisibility()}}></i>
                           :navigationLinks);
     }else{
         contentToRender = navigationLinks;
     }
     return(
         <>
-            <nav className={'mainNav' + classNavBarDeployed}>
-                <img className='logoNav' src={process.env.PUBLIC_URL + '/nav_logo.png'} alt='company logo' onClick={()=>navigate('/')}></img>
+            <nav title='mainNav' className={'mainNav' + classNavBarDeployed}>
+                <img title='logoNav' className='logoNav' src={process.env.PUBLIC_URL + '/nav_logo.png'} alt='company logo' onClick={()=>navigate('/')}></img>
                 {contentToRender}         
             </nav>
             <Outlet />

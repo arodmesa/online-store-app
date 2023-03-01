@@ -6,7 +6,7 @@ function BackgroundForNavBar(){
     const classToShowBackground = (isHorizontalBarsIconVisible)?'':' hideBackground';
     return(
         <>
-            <div className={"simpleBackground" + classToShowBackground}></div>
+            <div title='simpleBackground' className={"simpleBackground" + classToShowBackground}></div>
             <div className='paddingFromTop'></div>
         </>
     )

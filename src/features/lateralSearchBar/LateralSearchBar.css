@@ -116,6 +116,13 @@
     justify-content: center;
     align-items: center;
 }
+.h4Category{
+    font-size: 1.05em;
+}
+.h4Checked{
+    font-size: 1.15em;
+    text-decoration: underline;
+}
 .clearFiltersBtn{
     position: absolute;
     bottom: 20px;
@@ -150,6 +157,12 @@
     .organizeColors{
         column-gap: 25vw;
         row-gap: 35px;
+    }
+    .h4Category{
+        font-size: 1.2em;
+    }
+    .h4Checked{
+        font-size: 1.3em;
     }
 }
 @media (min-width: 901px){
@@ -198,6 +211,15 @@
         width: auto;
     }
     .clearFiltersBtn:hover{
+        cursor: pointer;
+    }
+    .h4Category{
+        font-size: 1.3em;
+    }
+    .h4Checked{
+        font-size: 1.45em;
+    }
+    .h4Category:hover{
         cursor: pointer;
     }
 }

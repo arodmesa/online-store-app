@@ -10,7 +10,7 @@ function CategoryButtons({categoryName, minimizeLateralBar}){
     const navigate = useNavigate();
   
     return(
-        <h4 className={(categoryName === activeCategoryName)?'category checked':'category'} onClick={()=>{changeActiveCategoryAndUrlCategory(categoryName); navigateToPageOne(navigate, params.page); minimizeLateralBar(true)}}>{categoryName}</h4>
+        <h4 title='categoryH4' className={(categoryName === activeCategoryName)?'category checked':'category'} onClick={()=>{changeActiveCategoryAndUrlCategory(categoryName); navigateToPageOne(navigate, params.page); minimizeLateralBar()}}>{categoryName}</h4>
     )
 }
 export default CategoryButtons;

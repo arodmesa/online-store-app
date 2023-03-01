@@ -43,21 +43,21 @@ function LateralSearchBar(){
           getData(navigate, 1);
         }       
     }
-    function minimizeLateralBar(shouldMinimizeBar){
+    function minimizeLateralBar(){
         const isNotDesktopDevice = matchMedia.matches;
         if (isNotDesktopDevice){
-            setMinimizeLateralBar(shouldMinimizeBar);
+            setMinimizeLateralBar(true);
         }        
     }
     const lateralBar = 
-        <div className='divSearchBar divColumnLateralBar'>
+        <div title='lateralBar' className='divSearchBar divColumnLateralBar'>
             <div className='organizeSearchInput divRowLateralBar'>
-                <input type='text' className='searchInput' placeholder='Type your keyword here' value={searchInputText} onChange={(event)=>dispatch(changeSearchInputText(event.target.value))} 
+                <input title='textInput' type='text' className='searchInput' placeholder='Type your keyword here' value={searchInputText} onChange={(event)=>dispatch(changeSearchInputText(event.target.value))} 
                     onKeyDown={(event)=>{
-                        if(event.key==='Enter'){handleSearchButtonClick(params.page); minimizeLateralBar(true)}
+                        if(event.key==='Enter'){handleSearchButtonClick(params.page); minimizeLateralBar()}
                     }}>
                 </input>
-                <i className='fa fa-search' onClick={()=>{handleSearchButtonClick(params.page); minimizeLateralBar(true)}}></i>
+                <i title='searchIcon' className='fa fa-search' onClick={()=>{handleSearchButtonClick(params.page); minimizeLateralBar()}}></i>
             </div>
             <div className='divCategories divColumnLateralBar'>
                 <h3 className='lateralBarHeaders'>Categories</h3>
@@ -68,7 +68,7 @@ function LateralSearchBar(){
             <div className='divColors divColumnLateralBar'>
                 <h3 className='lateralBarHeaders'>Colors</h3>
                 <div className='organizeColors'>
-                    <h4 className={(activeColor === 'all')?'h4_category checked':'h4_category'} 
+                    <h4 title='allH4Tag' className={(activeColor === 'all')?'h4Category h4Checked':'h4Category'} 
                         onClick={()=>{changeActiveColorAndUrlColor('all'); navigateToPageOne(navigate, params.page)}}>
                         all
                     </h4>
@@ -81,10 +81,10 @@ function LateralSearchBar(){
             <>
                 {
                     (isLateralBarMinimized)?
-                    <i className='fa fa-angle-double-right arrowStyle' onClick={()=>setMinimizeLateralBar(false)}></i>:
+                    <i title='rightArrow' className='fa fa-angle-double-right arrowStyle' onClick={()=>setMinimizeLateralBar(false)}></i>:
                     <div className='searchBarContainer'>
                         {lateralBar}
-                        <i className='fa fa-angle-double-left arrowStyle' onClick={()=>setMinimizeLateralBar(true)}></i>
+                        <i title='leftArrow' className='fa fa-angle-double-left arrowStyle' onClick={()=>setMinimizeLateralBar(true)}></i>
                     </div>
                 }
             </>

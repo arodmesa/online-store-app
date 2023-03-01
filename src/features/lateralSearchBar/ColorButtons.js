@@ -8,8 +8,8 @@ function ColorButtons({colorName, minimizeLateralBar}){
     const navigate = useNavigate();
     const activeColor = useSelector((state)=>state.activeColorReducer.color);   
     return(
-        <span className={`colors ${colorName}`} onClick={()=>{changeActiveColorAndUrlColor(colorName); navigateToPageOne(navigate, params.page); minimizeLateralBar(true)}}>
-            <i className={(colorName === activeColor)?"fa fa-check":''}></i>
+        <span title='colorSpan' className={`colors ${colorName}`} onClick={()=>{changeActiveColorAndUrlColor(colorName); navigateToPageOne(navigate, params.page); minimizeLateralBar()}}>
+            <i title='checkedIcon' className={(colorName === activeColor)?"fa fa-check":''}></i>
         </span>
     );
 }

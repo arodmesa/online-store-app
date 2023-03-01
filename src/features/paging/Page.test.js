@@ -1,4 +1,6 @@
-/* eslint-disable import/first */
+import Page from './Page';
+import {render, screen, fireEvent} from '@testing-library/react';
+
 const mockedUsedNavigate = jest.fn();
 const mockedHandlePageButtonCliked = jest.fn();
 jest.mock('react-router-dom', () => ({
@@ -9,9 +11,6 @@ jest.mock('./pagingFunctionalities', () => ({
     ...jest.requireActual('./pagingFunctionalities'),
     handlePageButtonCliked:  ()=>mockedHandlePageButtonCliked(),
 }));
-import Page from './Page';
-import {render, screen, fireEvent} from '@testing-library/react';
-
 test('correct page visualization',()=>{
     render(<Page pageNumber={1} startingPageNumberBtn={1} />)
     const divElement = screen.getByTitle('pageDiv');

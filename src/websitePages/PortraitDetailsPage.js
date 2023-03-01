@@ -1,7 +1,6 @@
+import './PortraitDetailsPage.css';
 import Animation from '../componentes/Animation';
 import BackgroundForNavBar from '../features/backgroundForNavBar/BackgroundForNavBar';
-import './PortraitDetailsPage.css';
-import './HomePage.css';
 import { fetchAndChangePortraitDetails } from '../features/portraitDetails/portraitDetailsFunctionalities';
 import {useParams, useNavigate} from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';

@@ -1,11 +1,11 @@
-/* eslint-disable import/first */
+import {render, screen, fireEvent} from '@testing-library/react';
+import Portrait from './Portrait';
+
 const mockedUsedNavigate = jest.fn();
 jest.mock('react-router-dom', () => ({
 ...jest.requireActual('react-router-dom'),
 useNavigate: () => mockedUsedNavigate,
 }));
-import {render, screen, fireEvent} from '@testing-library/react';
-import Portrait from './Portrait';
 function setUpComponent (portraitID, price, tags, imagePreview, isResultsPage){
     render(
         <Portrait portraitID={portraitID} price={price} tags={tags} imagePreview={imagePreview} isResultsPage={isResultsPage} />

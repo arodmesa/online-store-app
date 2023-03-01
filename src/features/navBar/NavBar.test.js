@@ -1,4 +1,10 @@
-/* eslint-disable import/first */
+import { Provider } from "react-redux";
+import {render, screen, fireEvent} from '@testing-library/react';
+import { changeHorizontalBarsIconVisibility } from "./horizontalBarsIconVisibilitySlice";
+import store from "../../app/store";
+import NavBar from "./NavBar";
+import {BrowserRouter} from 'react-router-dom'
+
 const mockedUsedNavigate = jest.fn();
 jest.mock('react-router-dom', () => ({
 ...jest.requireActual('react-router-dom'),
@@ -9,13 +15,6 @@ jest.mock('../../commonFunctions', () => ({
 ...jest.requireActual('../../commonFunctions'),
 resetSearchFilters: () => mockedResetSearchFilters(),
 }));
-import { Provider } from "react-redux";
-import {render, screen, fireEvent} from '@testing-library/react';
-import { changeHorizontalBarsIconVisibility } from "./horizontalBarsIconVisibilitySlice";
-import store from "../../app/store";
-import NavBar from "./NavBar";
-import {BrowserRouter} from 'react-router-dom'
-
 function setUpNavBar(isMobileDevice){
     Object.defineProperty(window, 'matchMedia', {
         writable: true,

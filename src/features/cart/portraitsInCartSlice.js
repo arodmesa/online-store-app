@@ -1,6 +1,9 @@
 import store from "../../app/store";
 import { createSlice } from "@reduxjs/toolkit";
-import { incrementAmountOfUniquePortraitsInCart, decrementAmountOfUniquePortraitsInCart, resetAmountOfUniquePortraitsInCart } from "./amountOfUniquePortraitsInCartSlice";
+import {    incrementAmountOfUniquePortraitsInCart, 
+            decrementAmountOfUniquePortraitsInCart, 
+            resetAmountOfUniquePortraitsInCart 
+        } from "./amountOfUniquePortraitsInCartSlice";
 import { calculateTotalPriceOfPurchase } from "./totalPriceOfPurchaseSlice";
 import { displayNotification } from "../notificationBar/notificationFunctionalities";
 
@@ -26,6 +29,7 @@ const portraitsInCartSlice = createSlice({
             };
             if (portraitID in state.portraitsInCart){
                 state.portraitsInCart[portraitID].amount += mainPortraitDetails[portraitID].amount; 
+                state.portraitsInCart[portraitID].subtotal += mainPortraitDetails[portraitID].subtotal;
             }else{
                 state.portraitsInCart = {
                     ...state.portraitsInCart,

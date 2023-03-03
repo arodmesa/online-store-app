@@ -14,13 +14,13 @@ function CartTableRow({portraitID, price, image, name, amount, subtotal}){
                 </div>
                 <div className='organizeComponents'>
                     <div className='detailsDivision'>
-                        <h4 className='detailsText imageTags'>{name}</h4>
-                        <h4 className='detailsText price'> {`$${price}`}</h4>
-                        <h4 className='detailsText subtotal'>{`subtotal: $${subtotal}`}</h4>
+                        <h4 title='h4Name' className='detailsText imageTags'>{name}</h4>
+                        <h4 title='h4Price' className='detailsText price'> {`$${price}`}</h4>
+                        <h4 title='h4Subtotal' className='detailsText subtotal'>{`subtotal: $${subtotal}`}</h4>
                     </div>
                     <div className='organizeAmount'>
                         <i className="fa fa-minus signo signsCart" onClick={()=>dispatch(decrementAmountOfOnePortraitInCart(portraitID))}></i>
-                        <h4 className='amount'>{amount}</h4>
+                        <h4 title='h4Amount' className='amount'>{amount}</h4>
                         <i className="fa fa-plus signo signsCart" onClick={()=>dispatch(incrementAmountOfOnePortraitInCart(portraitID))} ></i>
                         <i className="fa fa-trash-o" onClick={()=>dispatch(removePortraitFromCart(portraitID))}></i>
                     </div>  
